@@ -1,0 +1,49 @@
+.landing-page-main {
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Lato', sans-serif;
+}
+#loginScreen{
+	font-family: 'Lato', sans-serif;
+}
+.landing-page-main .logo {
+    padding: 15px 15px 15px 15px;
+	}
+.landing-page-main .landing-surveyHeader {
+	background-color: #fff;
+	width: 100%;
+	height: 70px;
+	position: relative;
+	text-align: center;
+}
+
+.landing-page-main .logo {
+	padding: 15px 15px 15px 15px;
+}
+
+.landing-page-main .landing-content-container {
+	margin-top: 140px;
+	margin-bottom: 80px;
+	color: #fff;
+	text-align: center;
+}
+
+.landing-content-container h2 {
+	font-size: 100%;
+	margin: 0;
+}
+.landing-page-main .landing-login-button {
+	width: 250px;
+	padding: 10px;
+	text-align: center;
+	background: #2AABE2;
+	margin: auto;
+}
+
+.landing-page-main .landing-login-button a {
+	color: #fff;
+	font-size: 16px;
+}
