@@ -1,0 +1,20 @@
+<section class="admin-main-container">
+	<header class="surveyHeader">
+  <img class="logo" src="/src/assets/devmountain_logo_whitetext.png" height="70">
+  <ul class="nav-links">
+    <li><a ui-sref="createModifyTemplate">Create / Modify Template</a></li>
+    <li><a ui-sref="createTopic">Add Topic</a></li>
+    <li><a ui-sref="sendSurvey">Send Survey</a></li>
+    <li><a ui-sref="viewResults">View Results</a></li>
+    <li class="dropdown-btn">
+      <a>More</a>
+      <div class="dropdown-cell">
+        <div><a class="admin_logout logout" ui-sref="cohortAdmin">CohortAdmin</a></div>
+        <div><a class="admin_logout logout" ng-click="adminLogout()">Logout</a></div>
+      </div>
+    </li>
+
+    <!--<li><a ui-sref="updateTopics">Update Topics</a></li>-->
+  </ul>
+</header>
+</section>

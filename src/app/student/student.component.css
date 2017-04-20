@@ -1,0 +1,107 @@
+.student-main-container {
+	text-align: center;
+}
+
+.student-main-container h3 {
+	font-size: 1.5em;
+}
+
+.student-main-container .student-surveyHeader {
+	display: flex;
+	justify-content: space-between;
+	background-color: #444;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+}
+
+.student-main-container .student-surveyHeader .logo {
+	height: 70%;
+	margin: 10px;
+}
+
+.student-main-container .student-surveyHeader .headerTitle {
+	color: #eee;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.5em;
+	height: inherit;
+	line-height: inherit;
+	width: inherit;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/*.student-main-container .student-surveyHeader .student_logout {
+	padding-right: 20px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 10;
+	font-size: 18px;
+}*/
+.student-nav-links{
+	display: flex;
+	justify-content: space-between;
+	padding-right: 20px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 10;
+	font-size: 18px;
+}
+.student-nav-links li{
+	margin-right: 4vw;
+}
+
+.student-main-container .survey-card {
+	height: 300px;
+	width: 700px;
+	margin: 80px auto;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.student-main-container .survey-card header {
+	height: 40px;
+	width: 100%;
+	padding-top: 8px;
+	background: #2AABE2;
+	padding-bottom: 26px;
+	margin-bottom: 55px;
+}
+
+.student-main-container .survey-card header h4 {
+	margin: 0;
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.student-main-container .survey-card .dev-mountain-button {
+	width: 250px;
+	height: 40px;
+	margin: auto;
+	border: none;
+	font-family: 'Lato', sans-serif;
+	background: #2AABE2;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.student-main-container .empty-state {
+	height: 300px;
+	width: 700px;
+	margin: 80px auto;
+	display: flex;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+	justify-content: center;
+	align-items: center;
+}
+#survey_container h4{
+	font-size: 100%
+}
+
+.student-main-container .empty-state h4 {
+	margin: -35px 0 0 0;
+}

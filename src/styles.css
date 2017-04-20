@@ -6,3 +6,19 @@
     vertical-align: baseline;
     font-size: 100%;
 }
+[routerLink]{
+	cursor: pointer;
+}
+Footer{
+	font-size: 20px;
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  height: 40px;
+	padding: 0px;
+	background-color: #666;
+	padding-top: 7.5px;
+}
+Footer a {
+  color: #007;
+}
