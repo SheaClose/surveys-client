@@ -10,10 +10,12 @@ import { LandingComponent } from './landing/landing.component';
 import { StudentComponent } from './student/student.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AdminComponent } from './admin/admin.component';
+import { TakesurveyComponent } from './takesurvey/takesurvey.component'
 
 import { StudentResolver } from "./resolvers/studentResolver"
 
-import { AuthService } from "./auth-service.service"
+import { AuthService } from "./auth-service.service";
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { AuthService } from "./auth-service.service"
     AppComponent,
     LandingComponent,
     StudentComponent,
-    AdminComponent
+    AdminComponent,
+    TakesurveyComponent
   ],
   imports: [
     BrowserModule,

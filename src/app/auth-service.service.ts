@@ -16,4 +16,11 @@ export class AuthService {
 				return response.json()
 			})
   }
+	logout(): Observable<any> {
+		return this.http
+			.get( this.baseUrl + 'api/logout' )
+			.map( response => {
+				return response.status
+			})
+	}
 }

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentComponent }   from '../student/student.component';
 import { LandingComponent }      from '../landing/landing.component';
 import { AdminComponent } from '../admin/admin.component'
+import { TakesurveyComponent } from "../takesurvey/takesurvey.component"
 
 import { StudentResolver } from "../resolvers/studentResolver"
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: 'student',  component: StudentComponent, resolve: { student: StudentResolver } },
   { path: 'landing',     component: LandingComponent },
-	{ path: 'admin',     component: AdminComponent }
+	{ path: 'admin',     component: AdminComponent },
+	{ path: 'takesurvey/:studentId',     component: TakesurveyComponent }
 ];
 
 
