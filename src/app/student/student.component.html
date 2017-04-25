@@ -18,7 +18,7 @@
 				</header>
 				<h5>You have a new survey!</h5>
 				<h4>Your feedback is greatly appreciated.</h4>
-				<button class="dev-mountain-button" [routerLink]="['/takesurvey', survey._id]">Take Survey</button>
+				<button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
 			</div>
 		</div>
 		<div *ngIf="repeatableSurveys.length > 0" class="">
@@ -29,7 +29,7 @@
 				</header>
 				<h5>You have a new survey!</h5>
 				<h4>Your feedback is greatly appreciated.</h4>
-				<button class="dev-mountain-button" [routerLink]="['/takesurvey', survey._id]">Take Survey</button>
+				<button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
 			</div>
 		</div>
 		<div *ngIf="optionalSurveys.length>0">
@@ -40,7 +40,7 @@
 	      </header>
 	      <h5>You have a new survey!</h5>
 	      <h4>Your feedback is greatly appreciated.</h4>
-	      <button class="dev-mountain-button" [routerLink]="['/takesurvey', survey._id]">Take Survey</button>
+	      <button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
 	    </div>
 		</div>
   </div>

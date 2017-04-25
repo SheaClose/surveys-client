@@ -11,11 +11,34 @@ export class  TakeSurveyService {
 
   constructor(private http: Http) {}
 
-	getUntaken(studentId): Observable<Survey[]> {
+	errorHandler(err){
+		console.log("error:", err)
+		return err
+	}
+	getUntaken( studentId: string ): Observable<Survey[]> {
 		return this.http
 			.get(this.apiBaseUrl + '/api/surveys/untaken/' + studentId)
-			.map(response => {
-				return response.json()
-			})
+			.map(student => student.json())
+			.catch(this.errorHandler)
 	}
+	getSurvey( surveyId: string ): Observable<any>{
+		return this.http
+			.get(this.apiBaseUrl + '/api/surveys/' + surveyId)
+			.map(survey => survey.json())
+			.catch(this.errorHandler)
+	}
+	getTopic(topicId){
+		return this.http
+			.get(this.apiBaseUrl + '/api/topics?_id=' + topicId)
+			.map(topic => topic.json().pop())
+			.catch(this.errorHandler)
+	}
+	writeSurveyResults(data){
+		return this.http
+			.post(this.apiBaseUrl + '/api/surveys/results', data)
+			.map(topic => topic.json())
+			.catch(this.errorHandler)
+	}
+
+
 }

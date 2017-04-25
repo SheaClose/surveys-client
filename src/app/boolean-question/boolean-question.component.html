@@ -1,0 +1,19 @@
+<header class="question-header">
+  <p [ngClass]="{bright_red: notAnswered[questionIndex]}">
+    {{questionText}}<span class="required" *ngIf="required">&nbsp;&nbsp;*</span>
+  </p>
+</header>
+<div class="bool_question_container">
+  <div
+    class="bool_question left_bool"
+    [ngClass]="{black_border_and_text: borderOnYes[questionIndex]}"
+    (click)="handleBooleanAnswer(true, questionIndex)">
+    Yes
+  </div>
+  <div
+    class="bool_question right_bool"
+    [ngClass]="{black_border_and_text: borderOnNo[questionIndex]}"
+    (click)="handleBooleanAnswer(false, questionIndex)">
+    No
+  </div>
+</div>

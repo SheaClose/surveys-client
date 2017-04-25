@@ -1,0 +1,227 @@
+div#takeSurvey{
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../../assets/devmountain_class_pic.jpg");
+	background-size: cover;
+	position: fixed;
+	overflow-y: scroll;
+}
+.surveyHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.surveyHeader .nav-links {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+}
+.surveyHeader .nav-links a {
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+.surveyHeader .logo {
+  height: 50px;
+  margin-top: 10px;
+}
+.surveyHeader .headerTitle {
+  color: #eee;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  height: inherit;
+  line-height: inherit;
+  width: inherit;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.surveyHeader .logout {
+  padding-right: 20px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+.surveyHeader .admin_logout {
+  padding-right: 20px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+}
+.takeSurveyHeader {
+	height: 90px;
+	position: relative;
+	align-items: left;
+	width: 100%;
+	background-color: #fff;
+	font-family: Helvetica, sans-serif;
+	font-size: 1.7em;
+}
+
+.takeSurveyHeader img {
+	position: absolute;
+	top: 22px;
+	left: 0;
+	height: 45px;
+	line-height: 45px;
+}
+
+.takeSurveyHeader .headerCenter {
+	position: absolute;
+	top: 22px;
+	height: 45px;
+	line-height: 45px;
+	width: inherit;
+	text-align: center;
+}
+
+.takeSurveyHeader .headerRight {
+	position: absolute;
+	top: 22px;
+	right: 5px;
+	height: 45px;
+	line-height: 45px;
+}
+
+.surveyBody {
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+
+h4 {
+	font-family: Helvetica, sans-serif;
+	font-size: 1.8em;
+	color: #001964;
+}
+
+h4 .left {
+	color: maroon;
+	margin-right: 10px;
+}
+
+p {
+	font-family: Helvetica, sans-serif;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.survey-question {
+	width: 500px;
+	height: 200px;
+	background-color: #fff;
+	margin: 40px auto;
+}
+
+.question-directive {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.topics-container li {
+	width: 400px;
+	padding: 20px;
+	text-align: center;
+	margin: 0  auto 15px;
+	text-transform: uppercase;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type=range] + .thumb {
+	background-color: #2aabe2;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	background-color: #2aabe2;
+}
+
+input[type=range]::-moz-range-thumb {
+	background-color: #2aabe2;
+}
+
+.bool_question_container {
+	height: 40px;
+	width: 180px;
+	position: relative;
+	margin: 60px auto;
+}
+
+#validation_modal {
+	background-color: #2aabe2;
+	color: #fff;
+	font-weight: bold;
+}
+
+#validation_modal .red_modal_font {
+	color: red;
+}
+
+#validation_modal h4 {
+	color: #fff;
+	font-weight: bold;
+}
+
+#validation_modal .modal-footer {
+	background-color: #2aabe2;
+	color: #fff;
+	font-weight: bold;
+}
+
+#validation_modal .modal-action {
+	background-color: #fff;
+}
+
+.lean-overlay {
+	display: none !important;
+  /* override materialize */;
+}
+
+.submit_div {
+	width: 500px;
+	height: 150px;
+	background-color: #fff;
+	margin-top: 40px;
+	margin-bottom: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	line-height: 160px;
+}
+
+.button {
+	font-family: Arial;
+	font-size: 1.5em;
+	background-color: #2aabe2;
+	font-weight: bold;
+	color: #fff;
+	border: none;
+	height: 55px;
+	width: 200px;
+}
+
+.input-field {
+	margin-top: 20px;
+	width: 80%;
+}
+
+
+
+textarea.materialize-textarea:focus:not([readonly]) {
+	border-bottom: 1px solid #2aabe2;
+	box-shadow: 0 1px 0 0 #2aabe2;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+	color: #2aabe2;
+}

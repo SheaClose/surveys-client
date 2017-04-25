@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Survey } from "../Survey";
 
 import { TakeSurveyService } from "../take-survey-service.service"
 import { AuthService } from "../auth-service.service"
@@ -19,7 +18,7 @@ export class StudentComponent implements OnInit {
 	optionalSurveys: any[] = [];
 	isMentor: boolean = false;
 	name: string = "";
-	studentLogout() :void {
+	studentLogout(): void {
 		let self = this
     this.authService.logout()
 	    .subscribe(function(responseStatus){
@@ -49,7 +48,6 @@ export class StudentComponent implements OnInit {
 		})
 		this.name = student.name.first + " " + student.name.last;
 
-		//check if current student is a mentor
 		this.isMentor = (_.findIndex(student.roles, (o) => o["role"] == 'mentor')) !== -1
   }
 

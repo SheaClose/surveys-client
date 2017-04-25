@@ -15,6 +15,9 @@ import { TakesurveyComponent } from './takesurvey/takesurvey.component'
 import { StudentResolver } from "./resolvers/studentResolver"
 
 import { AuthService } from "./auth-service.service";
+import { NumericQuestionComponent } from './numeric-question/numeric-question.component';
+import { BooleanQuestionComponent } from './boolean-question/boolean-question.component';
+import { TextQuestionComponent } from './text-question/text-question.component';
 
 
 
@@ -24,7 +27,10 @@ import { AuthService } from "./auth-service.service";
     LandingComponent,
     StudentComponent,
     AdminComponent,
-    TakesurveyComponent
+    TakesurveyComponent,
+    NumericQuestionComponent,
+    BooleanQuestionComponent,
+    TextQuestionComponent
   ],
   imports: [
     BrowserModule,

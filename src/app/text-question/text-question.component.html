@@ -1,0 +1,10 @@
+<header class="question-header">
+  <p [ngClass]="{bright_red: notAnswered[questionIndex]}">
+    {{questionText}}<span class="required" *ngIf="required">&nbsp;&nbsp;*</span>
+  </p>
+</header>
+
+<div class="input-field">
+  <textarea [(ngModel)]="response.textAnswer" id="textarea{{questionIndex}}" class="materialize-textarea"></textarea>
+  <label for="textarea{{questionIndex}}">Type Response Below</label>
+</div>

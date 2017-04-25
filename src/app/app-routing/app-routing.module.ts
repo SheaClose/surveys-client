@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'student',  component: StudentComponent, resolve: { student: StudentResolver } },
   { path: 'landing',     component: LandingComponent },
 	{ path: 'admin',     component: AdminComponent },
-	{ path: 'takesurvey/:studentId',     component: TakesurveyComponent }
+	{ path: 'student/takesurvey/:studentId',     component: TakesurveyComponent, resolve: { student: StudentResolver }	 }
 ];
 
 
