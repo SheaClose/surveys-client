@@ -24,7 +24,6 @@ export class AuthService {
 				return response.status
 			})
 			.catch((res :any) => {
-				console.log(res);
 				return res
 			})
 	}

@@ -3,14 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { TakeSurveyService } from "../take-survey-service.service"
 import { AuthService } from "../auth-service.service"
-
+import { MzToastService } from "ng2-materialize"
 import * as _ from "lodash";
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css'],
-	providers:[TakeSurveyService, AuthService]
+	providers:[TakeSurveyService, AuthService, MzToastService]
 })
 export class StudentComponent implements OnInit {
 	untakenSurveys: any[] = [];
@@ -19,30 +19,38 @@ export class StudentComponent implements OnInit {
 	isMentor: boolean = false;
 	name: string = "";
 	studentLogout(): void {
-		let self = this
     this.authService.logout()
-	    .subscribe(function(responseStatus){
-				(responseStatus === 200) ? self.router.navigate(['/landing']) : null;
+	    .subscribe((responseStatus)=>{
+				(responseStatus === 200) ? this.router.navigate(['/landing']) : null;
 		})
   };
   constructor(
 		private route: ActivatedRoute,
 		private takeSurveyService: TakeSurveyService,
 		private authService: AuthService,
-		private router: Router
+		private router: Router,
+		private mzToast: MzToastService
 	) {};
 
+
+	showToast() {
+	  this.mzToast.show('Survey Successfully Submitted', 4000, 'blue');
+	}
+
   ngOnInit() {
+		const {submitted} = this.route.snapshot.queryParams
 		const {student} = this.route.snapshot.data;
-		const self = this
+
+		submitted ? this.showToast() : null;
+
 		this.takeSurveyService.getUntaken(student._id).subscribe((surveyArray)=>{
-			surveyArray.forEach(function(e){
+			surveyArray.forEach((e)=>{
 				if (e.repeatable && e.usersTaken.indexOf(student._id)>-1){
-					self.repeatableSurveys.push(e);
+					this.repeatableSurveys.push(e);
 				}else if (e.optional){
-					self.optionalSurveys.push(e);
+					this.optionalSurveys.push(e);
 				}else{
-					self.untakenSurveys.push(e);
+					this.untakenSurveys.push(e);
 				}
 			})
 		})

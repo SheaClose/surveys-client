@@ -21,7 +21,6 @@ export class BooleanQuestionComponent implements OnInit {
   }
 
 	handleBooleanAnswer(answer, indx) {
-		console.log(answer)
       this.response.booleanAnswer = answer;
 			this.response.booleanAnswerCompleted = true;
       if (answer) {

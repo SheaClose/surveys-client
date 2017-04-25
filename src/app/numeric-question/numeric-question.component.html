@@ -1,5 +1,5 @@
 <header class="question-header">
-  <p ngClass="{bright_red: notAnswered[questionIndex]}">
+  <p [ngClass]="{bright_red: notAnswered[questionIndex]}">
     {{questionText}}<span class="required" *ngIf="required">&nbsp;&nbsp;*</span>
   </p>
 </header>

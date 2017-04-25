@@ -1,6 +1,9 @@
 <div id="takeSurvey" class="takeSurveyContainer">
   <header class="surveyHeader">
-    <img class="logo" src="../../assets/devmountain_logo_whitetext.png" height="70">
+		<a routerLink="/student" routerLinkActive="active">
+			<img class="logo" src="../../assets/devmountain_logo_whitetext.png" height="70">
+		</a>
+
     <div class="headerTitle">{{survey.name}}</div>
     <div class="logout" (click)="studentLogout()">Logout</div>
   </header>

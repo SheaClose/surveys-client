@@ -7,7 +7,7 @@
   text-transform: uppercase;
 }
 .bright_red {
-	color: red;
+	color: #c00;
 	font-weight: bold;
 }
 .required {

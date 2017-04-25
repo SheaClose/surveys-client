@@ -36,9 +36,10 @@ export class  TakeSurveyService {
 	writeSurveyResults(data){
 		return this.http
 			.post(this.apiBaseUrl + '/api/surveys/results', data)
-			.map(topic => topic.json())
+			.map(topic => {
+				return topic.status
+			})
 			.catch(this.errorHandler)
 	}
-
 
 }

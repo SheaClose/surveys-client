@@ -8,8 +8,8 @@
 }
 
 .bright_red {
-color: red;
-font-weight: bold;
+	color: #c00;
+	font-weight: bold;
 }
 
 .required {

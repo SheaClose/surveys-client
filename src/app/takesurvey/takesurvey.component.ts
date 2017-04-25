@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
+import { MzToastService } from "ng2-materialize"
+
 import { TakeSurveyService } from "../take-survey-service.service"
 import { AuthService } from "../auth-service.service"
 
@@ -28,7 +30,8 @@ export class TakesurveyComponent implements OnInit {
 		private route: ActivatedRoute,
 		private takeSurveyService: TakeSurveyService,
 		private authService: AuthService,
-		private router: Router
+		private router: Router,
+		private mzToast: MzToastService
 	) { }
 
   ngOnInit() {
@@ -43,6 +46,11 @@ export class TakesurveyComponent implements OnInit {
 			})
 		})
   }
+
+	errorToast() {
+	  this.mzToast.show('Error Submitting Survey', 4500, 'red');
+		this.mzToast.show("<p style='color:red;'>Validation Error: <br>Please answer all required questions shown in red</p>", 4500);
+	}
 
 	initializeResults(){
 		this.results.answers = []
@@ -65,31 +73,19 @@ export class TakesurveyComponent implements OnInit {
 
 	processForm( ){
         if (this.checkForRequired()) {
-            this.results.user = this.student._id;
-            this.results.survey = this.params
-            this.results.topic = this.topicId;
-						// NOTE: This is where you left off!!!
-						// console.log(this.results)
-        //     takeSurveyService.writeSurveyResults(this.results)
-        //     .then(function(response) {
-        //         console.log('in takeSurveyCtrl');
-        //         console.log('in processForm');
-        //         console.log('response', response);
-        //         if (response.status === 200) {
-        //             $state.go('student', {
-        //                 toastMessage: 'Survey Successfully Submitted'
-        //             });
-        //         }
-        //      })
-        //     .catch(function(err) {
-        //     // For any error, send them back to admin login screen.
-        //         console.error('err = ', err);
-        //         this.errorMsg = 'Error Submitting Survey';
-        //     });
+          this.results.user = this.student._id;
+          this.results.survey = this.params
+          this.results.topic = this.topicId;
+          this.takeSurveyService
+						.writeSurveyResults(this.results)
+						.subscribe( status => {
+	                if (status === 200) {
+										this.router.navigate(['/student'], { queryParams: { submitted: true } })
+	                }
+						})
         }
         else {
-        /*   alert('Need to answer all required questions shown in red');*/
-            // $('#validation_modal').openModal();
+        	this.errorToast()
         }
     }
 	checkForRequired(){

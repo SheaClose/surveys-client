@@ -18,6 +18,7 @@ import { AuthService } from "./auth-service.service";
 import { NumericQuestionComponent } from './numeric-question/numeric-question.component';
 import { BooleanQuestionComponent } from './boolean-question/boolean-question.component';
 import { TextQuestionComponent } from './text-question/text-question.component';
+import { ModalExampleComponent } from './modal-example/modal-example.component';
 
 
 
@@ -30,7 +31,8 @@ import { TextQuestionComponent } from './text-question/text-question.component';
     TakesurveyComponent,
     NumericQuestionComponent,
     BooleanQuestionComponent,
-    TextQuestionComponent
+    TextQuestionComponent,
+    ModalExampleComponent
   ],
   imports: [
     BrowserModule,
