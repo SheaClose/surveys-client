@@ -1,0 +1,12 @@
+<header class="question-header">
+  <p [ngClass]="{bright_red: notAnswered[questionIndex]}">
+    {{questionText}}<span class="required" *ngIf="required">&nbsp;&nbsp;*</span>
+  </p>
+</header>
+	<div class="range-field">
+		<input type="range" name="slider{{ questionIndex}} " [(ngModel)]="response.numericAnswer" min="{{ lowValue }}" max="{{ highValue }}">
+		<span class="slider_left">Not very well</span>
+		<span class="slider_right">Super very well</span>
+		<img class="slider_left_img" src="../../assets/dislike_emoticon.jpg" width="60">
+		<img class="slider_right_img" src="../../assets/smiley_emoticon.jpg" width="70">
+	</div>

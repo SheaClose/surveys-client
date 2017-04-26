@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http }       from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+
 import 										 'rxjs/add/operator/map';
-import { Survey } 		from "./Survey"
 
 @Injectable()
 export class AuthService {
@@ -15,12 +15,16 @@ export class AuthService {
 			.map(response => {
 				return response.json()
 			})
+
   }
 	logout(): Observable<any> {
 		return this.http
 			.get( this.baseUrl + 'api/logout' )
 			.map( response => {
 				return response.status
+			})
+			.catch((res :any) => {
+				return res
 			})
 	}
 }
