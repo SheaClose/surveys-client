@@ -80,3 +80,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 textarea.materialize-textarea:focus:not([readonly]) + label {
 	color: #2aabe2;
 }
+input[type=range]{
+	margin-left: 0px;
+}

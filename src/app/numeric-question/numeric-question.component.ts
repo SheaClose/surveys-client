@@ -17,5 +17,6 @@ export class NumericQuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+		this.response.numericAnswer = Math.round(this.lowValue + 0.5*(this.highValue - this.lowValue))
   }
 }

@@ -138,18 +138,6 @@ p {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-input[type=range] + .thumb {
-	background-color: #2aabe2;
-}
-
-input[type=range]::-webkit-slider-thumb {
-	background-color: #2aabe2;
-}
-
-input[type=range]::-moz-range-thumb {
-	background-color: #2aabe2;
-}
-
 .bool_question_container {
 	height: 40px;
 	width: 180px;

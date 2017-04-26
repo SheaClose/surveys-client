@@ -59,14 +59,3 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 		font-size: 1.3em;
 		text-align: center;
 	}
-	input[type=range] + .thumb {
-		background-color: #2aabe2;
-	}
-
-	input[type=range]::-webkit-slider-thumb {
-		background-color: #2aabe2;
-	}
-
-	input[type=range]::-moz-range-thumb {
-		background-color: #2aabe2;
-	}
