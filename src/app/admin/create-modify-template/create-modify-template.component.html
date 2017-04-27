@@ -1,0 +1,50 @@
+<section class="create-template-container">
+  <app-admin-header></app-admin-header>
+  <div id="createModifyTemplate" class="surveyContainer">
+    <div class="container">
+      <h4 class="create-template-header">Select Template:</h4>
+      <div class="input-row top-row">
+        <div class="input-field col s6">
+          <select [(ngModel)]="selectedTemplate" (change)="loadSelectedTemplate(selectedTemplate)">
+            <option value="" disabled active selected>Select Template</option>
+						<option ngDefaultControl  *ngFor="let templ of templates" [ngValue]="templ">
+		          {{ templ.name }}
+		        </option>
+          </select>
+        </div>
+      </div>
+      <form (submit)="processForm()">
+        <div class="input-row">
+          <p>Name:</p>
+          <div class="input-field col s6">
+            <input [(ngModel)]="template.name" name="name" type="text" id="templateName" required>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <p>Description:</p>
+          <div class="input-field col s6">
+            <input [(ngModel)]="template.description" name="description" type="text" id="templateDescription">
+          </div>
+        </div>
+
+        <ul *ngFor="let question of template.questions; let i = index; trackBy: i">
+          <app-question-crud
+						[question]="question"
+						[questionTypes]="quest_types"
+						[questionIndex]="i"
+						(questionDeleted)="deleteQuestion($event)"
+					></app-question-crud>
+					<hr>
+        </ul>
+        <section class="button-container">
+          <button class="button dev-mountain-button" type="button" (click)="addNewQuestion()">Add Question</button>
+          <button class="button dev-mountain-button" type="submit">Save</button>
+        </section>
+
+        <br>
+        <p class="error_msg" *ngIf="errorMsg">{{errorMsg}}</p>
+      </form>
+    </div>
+  </div>
+</section>

@@ -17,14 +17,22 @@ export class AuthService {
 			})
 
   }
+	checkForAdminAuth(): Observable<any>{
+		return this.http
+			.get(this.baseUrl + 'api/current_admin_user')
+			.map(response => response.status)
+			.catch((res :any) => res)
+	}
 	logout(): Observable<any> {
 		return this.http
 			.get( this.baseUrl + 'api/logout' )
-			.map( response => {
-				return response.status
-			})
-			.catch((res :any) => {
-				return res
-			})
+			.map( response => { return response.status })
+			.catch((res :any) => { return res	})
 	}
+	getAllTemplateNames(): Observable<any> {
+    	return this.http
+				.get( this.baseUrl + 'api/admin/templates/' )
+				.map( res=>{ return res } )
+				.catch(err=>{ console.log(err); return err })
+    }
 }

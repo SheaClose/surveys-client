@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
 import { AuthService } from '../auth-service.service';
 
 @Injectable()
-export class StudentResolver implements Resolve<any> {
+export class AdminResolver implements Resolve<any> {
   constructor(
 		private authService: AuthService,
 		private router : Router
@@ -15,7 +15,7 @@ export class StudentResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<any>|Promise<any>|any {
     return this.authService
-			.checkForAuth()
+			.checkForAdminAuth()
 			.catch((res :any) => {
 				this.router.navigate(['/landing'])
 				return res

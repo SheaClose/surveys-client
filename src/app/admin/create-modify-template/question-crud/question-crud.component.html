@@ -1,0 +1,46 @@
+<div class="question_crud">
+
+  <div class="input-row">
+    <p class="bold_text">Question Text:</p>
+    <div class="input-field col s6">
+      <input [(ngModel)]="question.questionText" type="text" id="questionText{{questionIndex}}" required>
+    </div>
+  </div>
+
+  <div class="input-row">
+    <p>Choose Question Type:</p>
+    <div class="input-field col s6">
+      <select id="choose_question_type" [(ngModel)]="question.type">
+        <option value="" disabled selected>Choose Question Type</option>
+				<option value={{type}} *ngFor="let type of questionTypes">{{type}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="input-row">
+    <p>
+      <input type="checkbox" [(ngModel)]="question.required" id="questionRequired{{questionIndex}}">
+      <label for="questionRequired{{questionIndex}}">Required?</label>
+    </p>
+  </div>
+
+  <div *ngIf="question.type==='numeric'">
+    <div class="input-row">
+      <p>Low Value:</p>
+      <div class="input-field col s6">
+        <input [(ngModel)]="question.lowValue" type="number" id="questionLowValue{{questionIndex}}">
+      </div>
+    </div>
+
+    <div class="input-row">
+      <p>High Value:</p>
+      <div class="input-field col s6">
+        <input [(ngModel)]="question.highValue" type="number" id="questionHighValue{{questionIndex}}">
+      </div>
+    </div>
+  </div>
+  <div class="input-field col s6">
+    <img class="delete_icon" src="src/assets/delete_icon.jpg" (click)="deleteQuestion(questionIndex)" height="20">
+  </div>
+	<hr style="width: 100vw; display: block; color: red; background-color:red;">
+</div>

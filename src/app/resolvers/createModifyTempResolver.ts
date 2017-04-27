@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
 import { AuthService } from '../auth-service.service';
 
 @Injectable()
-export class StudentResolver implements Resolve<any> {
+export class CreateModifyTempResolver implements Resolve<any> {
   constructor(
 		private authService: AuthService,
 		private router : Router
@@ -15,11 +15,21 @@ export class StudentResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<any>|Promise<any>|any {
     return this.authService
-			.checkForAuth()
-			.catch((res :any) => {
-				this.router.navigate(['/landing'])
-				return res
-			}
-		)
+						.getAllTemplateNames()
+						.catch( (err :any) => {
+							console.error('err = ', err);
+		          if (err.status === 403) { //  if unauthorized
+		            this.router.navigate(['/student'])
+		          }
+		          else {
+								this.router.navigate(['/landing'], {
+									queryParams: {
+										successRedirect: "createModifyTemplate"
+									}
+								})
+							}
+							return err
+						})
+
   }
 }
