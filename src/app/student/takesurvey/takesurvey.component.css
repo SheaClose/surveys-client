@@ -1,7 +1,7 @@
 div#takeSurvey{
 	width: 100vw;
 	height: 100vh;
-	background-image: url("../../assets/devmountain_class_pic.jpg");
+	background-image: url("../../../assets/devmountain_class_pic.jpg");
 	background-size: cover;
 	position: fixed;
 	overflow-y: scroll;

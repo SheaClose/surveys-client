@@ -4,8 +4,8 @@ import { NgForm } from '@angular/forms';
 
 import { MzToastService } from "ng2-materialize"
 
-import { TakeSurveyService } from "../take-survey-service.service"
-import { AuthService } from "../auth-service.service"
+import { TakeSurveyService } from "../../take-survey-service.service"
+import { AuthService } from "../../auth-service.service"
 
 @Component({
   selector: 'app-takesurvey',
