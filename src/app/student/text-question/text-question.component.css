@@ -8,8 +8,8 @@
 }
 
 .bright_red {
-	color: #c00;
-	font-weight: bold;
+  color: #c00;
+  font-weight: bold;
 }
 
 .required {
@@ -17,14 +17,14 @@
 }
 
 .input-field {
-	margin: 0 auto;
+  margin: 0 auto;
   margin-top: 20px;
   width: 80%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	max-height: 7rem;
-	overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 7rem;
+  overflow-y: visible;
 }
 
 textarea.materialize-textarea:focus:not([readonly]) {
@@ -32,30 +32,32 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 #2aabe2;
 }
 
-textarea.materialize-textarea:focus:not([readonly]) + label {
+textarea.materialize-textarea:focus:not([readonly])+label {
   color: #2aabe2;
 }
+
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #2aabe2;
   box-shadow: 0 1px 0 0 #2aabe2;
 }
 
-textarea.materialize-textarea:focus:not([readonly]) + label {
+textarea.materialize-textarea:focus:not([readonly])+label {
   color: #2aabe2;
 }
-	h4 {
-		font-family: Helvetica, sans-serif;
-		font-size: 1.8em;
-		color: #001964;
-	}
 
-	h4 .left {
-		color: maroon;
-		margin-right: 10px;
-	}
+h4 {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.8em;
+  color: #001964;
+}
 
-	p {
-		font-family: Helvetica, sans-serif;
-		font-size: 1.3em;
-		text-align: center;
-	}
+h4 .left {
+  color: maroon;
+  margin-right: 10px;
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+}

@@ -1,8 +1,8 @@
 <div id="takeSurvey" class="takeSurveyContainer">
   <header class="surveyHeader">
-		<a routerLink="/student" routerLinkActive="active">
-			<img class="logo" src="../../assets/devmountain_logo_whitetext.png" height="70">
-		</a>
+    <a routerLink="/student" routerLinkActive="active">
+      <img class="logo" src="../../assets/devmountain_logo_whitetext.png" height="70">
+    </a>
 
     <div class="headerTitle">{{survey.name}}</div>
     <div class="logout" (click)="studentLogout()">Logout</div>
@@ -12,41 +12,15 @@
     <form (ngSubmit)="processForm()">
       <div class="survey-question" *ngFor="let question of survey.questions; let i = index; trackBy: i">
 
-        <app-numeric-question
-          class="question-directive"
-          [lowValue]="question.lowValue"
-          [highValue]="question.highValue"
-          [required]="question.required"
-          [questionText]="question.questionText"
-          [response]="results.answers[i]"
-          [questionIndex]="i"
-          [questionType]="question.type"
-          [notAnswered]="notAnswered"
-          *ngIf="question.type === 'numeric'">
+        <app-numeric-question class="question-directive" [lowValue]="question.lowValue" [highValue]="question.highValue" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type"
+          [notAnswered]="notAnswered" *ngIf="question.type === 'numeric'">
         </app-numeric-question>
 
-        <app-boolean-question
-          class="question-directive"
-          [required]="question.required"
-          [questionText]="question.questionText"
-          [response]="results.answers[i]"
-          [questionIndex]="i"
-          [questionType]="question.type"
-          [notAnswered]="notAnswered"
-          [borderOnYes]="borderOnYes"
-          [borderOnNo]="borderOnNo"
-          *ngIf="question.type === 'boolean'">
+        <app-boolean-question class="question-directive" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" [borderOnYes]="borderOnYes"
+          [borderOnNo]="borderOnNo" *ngIf="question.type === 'boolean'">
         </app-boolean-question>
 
-        <app-text-question
-          class="question-directive"
-					[required]="question.required"
-          [questionText]="question.questionText"
-          [response]="results.answers[i]"
-          [questionIndex]="i"
-          [questionType]="question.type"
-          [notAnswered]="notAnswered"
-          *ngIf="question.type === 'text'">
+        <app-text-question class="question-directive" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" *ngIf="question.type === 'text'">
         </app-text-question>
 
       </div>

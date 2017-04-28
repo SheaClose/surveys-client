@@ -29,13 +29,8 @@
         </div>
 
         <ul *ngFor="let question of template.questions; let i = index; trackBy: i">
-          <app-question-crud
-						[question]="question"
-						[questionTypes]="quest_types"
-						[questionIndex]="i"
-						(questionDeleted)="deleteQuestion($event)"
-					></app-question-crud>
-					<hr>
+          <app-question-crud [question]="question" [questionTypes]="quest_types" [questionIndex]="i" (questionDeleted)="deleteQuestion($event)"></app-question-crud>
+          <hr>
         </ul>
         <section class="button-container">
           <button class="button dev-mountain-button" type="button" (click)="addNewQuestion()">Add Question</button>
