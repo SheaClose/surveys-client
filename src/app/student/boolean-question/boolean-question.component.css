@@ -1,6 +1,6 @@
 .bright_red {
-	color: #c00;
-	font-weight: bold;
+  color: #c00;
+  font-weight: bold;
 }
 
 .question-header {
@@ -13,90 +13,97 @@
 }
 
 .required {
-	color: orangered;
+  color: orangered;
 }
 
 .bool_question_container {
-	height: 40px;
-	width: 180px;
-	position: relative;
-	margin: 60px auto;
+  height: 40px;
+  width: 180px;
+  position: relative;
+  margin: 60px auto;
 }
 
 .bool_question {
-	height: 40px;
-	width: 80px;
-	background-color: #2aabe2;
-	color: #fff;
-	position: absolute;
-	text-align: center;
-	line-height: 40px;
+  height: 40px;
+  width: 80px;
+  background-color: #2aabe2;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  line-height: 40px;
 }
 
 .bool_question:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .left_bool {
-	left: 0;
+  left: 0;
 }
 
 .right_bool {
-	right: 0;
+  right: 0;
 }
 
 .black_border_and_text {
-	border: 3px solid black;
-	color: black;
-	line-height: 34px;
+  border: 3px solid black;
+  color: black;
+  line-height: 34px;
 }
 
 h4 {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.8em;
-	color: #001964;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.8em;
+  color: #001964;
 }
 
 h4 .left {
-	color: maroon;
-	margin-right: 10px;
+  color: maroon;
+  margin-right: 10px;
 }
 
 p {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.3em;
-	text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  text-align: center;
 }
 
 textarea.materialize-textarea:focus:not([readonly]) {
-	border-bottom: 1px solid #2aabe2;
-	box-shadow: 0 1px 0 0 #2aabe2;
+  border-bottom: 1px solid #2aabe2;
+  box-shadow: 0 1px 0 0 #2aabe2;
 }
 
-textarea.materialize-textarea:focus:not([readonly]) + label {
-	color: #2aabe2;
+textarea.materialize-textarea:focus:not([readonly])+label {
+  color: #2aabe2;
 }
+
 #validation_modal {
-	background-color: #2aabe2;
-	color: #fff;
-	font-weight: bold;
+  background-color: #2aabe2;
+  color: #fff;
+  font-weight: bold;
 }
 
 #validation_modal .red_modal_font {
-	color: red;
+  color: red;
 }
 
 #validation_modal h4 {
-	color: #fff;
-	font-weight: bold;
+  color: #fff;
+  font-weight: bold;
 }
 
 #validation_modal .modal-footer {
-	background-color: #2aabe2;
-	color: #fff;
-	font-weight: bold;
+  background-color: #2aabe2;
+  color: #fff;
+  font-weight: bold;
 }
 
 #validation_modal .modal-action {
-	background-color: #fff;
+  background-color: #fff;
+}
+
+span.thumb.active {
+  background-color: red;
+  color: red;
+  font-size: 5em;
 }

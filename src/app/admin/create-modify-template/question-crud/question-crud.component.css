@@ -1,50 +1,51 @@
-#choose_question_type{
-	display: block;
+#choose_question_type {
+  display: block;
 }
+
 p, #sendSurvey p {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.3em;
-	color: rgb(0, 53, 139);
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: rgb(0, 53, 139);
 }
 
 .bold_text {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 p.error_msg, #sendSurvey p.error_msg, #loginScreen p.error_msg, #signupScreen p.error_msg, #takeSurvey p.error_msg {
-	color: red;
-	font-weight: bold;
-	text-align: center;
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .container .row {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
-div > option {
-	display: none;
+div>option {
+  display: none;
 }
 
 .question_crud {
-	margin-top: 40px;
-	margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .red_background {
-	background-color: red;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
 }
 
 .green_background {
-	background-color: green;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
-	margin-right: 10px;
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
+  margin-right: 10px;
 }

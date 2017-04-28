@@ -7,14 +7,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class QuestionCrudComponent {
 
-	@Input() public question: any;
-	@Input() public questionTypes: any;
-	@Input() public questions: any;
-	@Input() public questionIndex: any;
-	@Output() public questionDeleted = new EventEmitter;
+  @Input() public question: any;
+  @Input() public questionTypes: any;
+  @Input() public questions: any;
+  @Input() public questionIndex: any;
+  @Output() public questionDeleted = new EventEmitter;
 
-	deleteQuestion(idx):void{
-		this.questionDeleted.emit(idx);
-	}
+  deleteQuestion(idx): void {
+    this.questionDeleted.emit(idx);
+  }
 
 }

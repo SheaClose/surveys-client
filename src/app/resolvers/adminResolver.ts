@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
-import 										 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/catch';
 
 import { Observable } from 'rxjs/Rx';
 import { AuthService } from '../auth-service.service';
@@ -9,17 +9,16 @@ import { AuthService } from '../auth-service.service';
 @Injectable()
 export class AdminResolver implements Resolve<any> {
   constructor(
-		private authService: AuthService,
-		private router : Router
-	) {}
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<any>|Promise<any>|any {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return this.authService
-			.checkForAdminAuth()
-			.catch((res :any) => {
-				this.router.navigate(['/landing'])
-				return res
-			}
-		)
+      .checkForAdminAuth()
+      .catch((res: any) => {
+        this.router.navigate(['/landing']);
+        return res;
+      });
   }
 }

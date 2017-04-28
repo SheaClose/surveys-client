@@ -11,38 +11,38 @@
     <div class="empty-state" *ngIf="untakenSurveys.length == 0">
       <h4>Looks like you're all caught up on surveys! Thanks for your feedback.</h4>
     </div>
-		<div *ngIf="untakenSurveys.length > 0" >
-			<div class="survey-card" *ngFor="let survey of untakenSurveys; let i = index">
-				<header>
-					<h4>{{survey.name}}</h4>
-				</header>
-				<h5>You have a new survey!</h5>
-				<h4>Your feedback is greatly appreciated.</h4>
-				<button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
-			</div>
-		</div>
-		<div *ngIf="repeatableSurveys.length > 0" class="">
-			<h3>Repeatable Surveys</h3>
-			<div class="survey-card" *ngFor="let survey of repeatableSurveys; let i = index">
-				<header>
-					<h4>{{survey.name}}</h4>
-				</header>
-				<h5>You have a new survey!</h5>
-				<h4>Your feedback is greatly appreciated.</h4>
-				<button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
-			</div>
-		</div>
-		<div *ngIf="optionalSurveys.length>0">
-			<h3>Optional Surveys</h3>
-	    <div class="survey-card" *ngFor="let survey of optionalSurveys">
-	      <header>
-	        <h4>{{survey.name}}</h4>
-	      </header>
-	      <h5>You have a new survey!</h5>
-	      <h4>Your feedback is greatly appreciated.</h4>
-	      <button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
-	    </div>
-		</div>
+    <div *ngIf="untakenSurveys.length > 0">
+      <div class="survey-card" *ngFor="let survey of untakenSurveys; let i = index">
+        <header>
+          <h4>{{survey.name}}</h4>
+        </header>
+        <h5>You have a new survey!</h5>
+        <h4>Your feedback is greatly appreciated.</h4>
+        <button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
+      </div>
+    </div>
+    <div *ngIf="repeatableSurveys.length > 0" class="">
+      <h3>Repeatable Surveys</h3>
+      <div class="survey-card" *ngFor="let survey of repeatableSurveys; let i = index">
+        <header>
+          <h4>{{survey.name}}</h4>
+        </header>
+        <h5>You have a new survey!</h5>
+        <h4>Your feedback is greatly appreciated.</h4>
+        <button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
+      </div>
+    </div>
+    <div *ngIf="optionalSurveys.length>0">
+      <h3>Optional Surveys</h3>
+      <div class="survey-card" *ngFor="let survey of optionalSurveys">
+        <header>
+          <h4>{{survey.name}}</h4>
+        </header>
+        <h5>You have a new survey!</h5>
+        <h4>Your feedback is greatly appreciated.</h4>
+        <button class="dev-mountain-button" [routerLink]="['/student/takesurvey', survey._id]">Take Survey</button>
+      </div>
+    </div>
   </div>
 
 </section>

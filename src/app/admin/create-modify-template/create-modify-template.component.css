@@ -1,82 +1,93 @@
 .create-template-container .container {
   width: 700px;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .create-template-container .create-template-header {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+}
 
 .create-template-container .top-row {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+}
 
 .createModifyTemplate p, #sendSurvey p {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.3em;
-	color: #00358b;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: #00358b;
 }
-#choose_template{
-	z-index: 1000;
+
+#choose_template {
+  z-index: 1000;
 }
-select{
-	display: block !important;
+
+select {
+  display: block !important;
 }
+
 #createModifyTemplate .bold_text {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .error_msg {
-	color: red;
-	font-weight: bold;
-	text-align: center;
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 #createModifyTemplate .container .row {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
-#createModifyTemplate div > option {
-	/*display: none;*/
+#createModifyTemplate div>option {
+  /*display: none;*/
 }
 
 #createModifyTemplate .question_crud {
-	margin-top: 40px;
-	margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .red_background {
-	background-color: red;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
 }
 
- .green_background {
-	background-color: green;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
-	margin-right: 10px;
+.green_background {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
+  margin-right: 10px;
 }
+
 .container {
   text-align: center;
 }
+
 .input-row {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .input-field {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .button-container {
   margin-top: 25px;
 }
+
 .button-container .dev-mountain-button {
   border: none;
   font-family: 'Lato', sans-serif;
@@ -87,59 +98,64 @@ select{
   text-align: center;
   text-transform: uppercase;
 }
-#choose_question_type{
-	display: block;
+
+#choose_question_type {
+  display: block;
 }
+
 p, #sendSurvey p {
-	font-family: Helvetica, sans-serif;
-	font-size: 1.3em;
-	color: rgb(0, 53, 139);
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: rgb(0, 53, 139);
 }
 
 .bold_text {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 p.error_msg, #sendSurvey p.error_msg, #loginScreen p.error_msg, #signupScreen p.error_msg, #takeSurvey p.error_msg {
-	color: red;
-	font-weight: bold;
-	text-align: center;
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .container .row {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
-hr{
-	width: 50vw;
+
+hr {
+  width: 50vw;
 }
-div > option {
-	display: none;
+
+div>option {
+  display: none;
 }
 
 .question_crud {
-	margin-top: 40px;
-	margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .red_background {
-	background-color: red;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
+  background-color: red;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
 }
 
 .green_background {
-	background-color: green;
-	color: black;
-	font-weight: bold;
-	width: 85px;
-	text-align: center;
-	padding: 0;
-	margin-right: 10px;
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  width: 85px;
+  text-align: center;
+  padding: 0;
+  margin-right: 10px;
 }
+
 .margin_top {
-	position: relative;
-	margin-top: 200px !important;
+  position: relative;
+  margin-top: 200px !important;
 }

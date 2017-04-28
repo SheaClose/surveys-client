@@ -1,79 +1,80 @@
 .surveyHeader {
-	display: flex;
-	justify-content: space-between;
-	background-color: #333;
-	width: 100%;
-	height: 70px;
-	line-height: 70px;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-	margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
 }
 
 .surveyHeader .nav-links {
-	width: 65%;
-	display: flex;
-	justify-content: space-around;
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .surveyHeader .nav-links a {
-	color: #fff;
-	cursor: pointer;
-	z-index: 10;
-	font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
 }
 
 .surveyHeader .logo {
-	height: 50px;
-	margin-top: 10px;
+  height: 50px;
+  margin-top: 10px;
 }
 
 .surveyHeader .headerTitle {
-	color: #eee;
-	font-family: Helvetica, sans-serif;
-	font-size: 1.5em;
-	height: inherit;
-	line-height: inherit;
-	width: inherit;
-	text-align: center;
-	position: absolute;
-	left: 0;
-	top: 0;
+  color: #eee;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  height: inherit;
+  line-height: inherit;
+  width: inherit;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .surveyHeader .logout {
-	padding-right: 20px;
-	color: #fff;
-	cursor: pointer;
-	z-index: 10;
-	font-size: 18px;
+  padding-right: 20px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
 }
 
 .surveyHeader .admin_logout {
-	padding-right: 20px;
-	color: #fff;
-	cursor: pointer;
-	z-index: 10;
-	font-size: 18px;
+  padding-right: 20px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
 }
+
 .dropdown-btn:hover .dropdown-cell {
-	display: block;
+  display: block;
 }
 
 .dropdown-btn .dropdown-cell {
-	position: fixed;
-	right: 0;
-	display: none;
-	color: black;
-	background-color: #444;
-	text-decoration: none;
-	text-align: left;
-	margin-top: -1px;
+  position: fixed;
+  right: 0;
+  display: none;
+  color: black;
+  background-color: #444;
+  text-decoration: none;
+  text-align: left;
+  margin-top: -1px;
 }
 
 .dropdown-btn .dropdown-cell div {
-	padding-left: 10px;
+  padding-left: 10px;
 }
 
 .dropdown-btn .dropdown-cell div:hover {
-	background-color: #333;
+  background-color: #333;
 }

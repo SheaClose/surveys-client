@@ -7,12 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./text-question.component.css']
 })
 export class TextQuestionComponent implements OnInit {
-	@Input() public questionText: string;
-	@Input() public response;
-	@Input() public questionIndex;
-	@Input() public questionType;
-	@Input() public notAnswered;
-	@Input() public required;
+  @Input() public questionText: string;
+  @Input() public response;
+  @Input() public questionIndex;
+  @Input() public questionType;
+  @Input() public notAnswered;
+  @Input() public required;
 
   constructor() { }
 
