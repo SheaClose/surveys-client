@@ -32,7 +32,6 @@ export class TemplateSurveyService {
       .catch(this.errorHandler);
   }
   writeNewTemplate(template) {
-    console.log(template);
     return this.http
       .post(this.apiBaseUrl + '/api/admin/templates/', template)
       .map((res) => {
@@ -40,5 +39,18 @@ export class TemplateSurveyService {
       })
       .catch(this.errorHandler);
   }
-
+  getAllTopicNames() {
+    return this.http
+      .get(this.apiBaseUrl + '/api/admin/topics/')
+      .map(res => res.json() )
+      .catch(this.errorHandler);
+  }
+  addNewTopic(data) {
+    return this.http
+      .post(this.apiBaseUrl + '/api/admin/topics/', data)
+      .map(res => {
+        return res.json();
+      })
+      .catch(this.errorHandler);
+  }
 }
