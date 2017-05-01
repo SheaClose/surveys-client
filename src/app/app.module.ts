@@ -18,8 +18,11 @@ import { TakesurveyComponent } from './student/takesurvey/takesurvey.component';
 import { StudentResolver } from './resolvers/studentResolver';
 import { AdminResolver } from './resolvers/adminResolver';
 import { CreateModifyTempResolver } from './resolvers/createModifyTempResolver';
+import { CreateTopicResolver } from './resolvers/createTopicResolver';
 
 import { AuthService } from './auth-service.service';
+import { TemplateSurveyService } from './admin/templateSurveyService';
+
 import { NumericQuestionComponent } from './student/numeric-question/numeric-question.component';
 import { BooleanQuestionComponent } from './student/boolean-question/boolean-question.component';
 import { TextQuestionComponent } from './student/text-question/text-question.component';
@@ -64,7 +67,9 @@ import { QuestionCrudComponent } from './admin/create-modify-template/question-c
     StudentResolver
     , AdminResolver
     , CreateModifyTempResolver
+    , CreateTopicResolver
     , AuthService
+    , TemplateSurveyService
   ]
   , bootstrap: [AppComponent]
 })

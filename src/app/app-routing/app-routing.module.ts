@@ -16,6 +16,7 @@ import { CohortAdminComponent } from '../admin/cohort-admin/cohort-admin.compone
 import { StudentResolver } from '../resolvers/studentResolver';
 import { AdminResolver } from '../resolvers/adminResolver';
 import { CreateModifyTempResolver } from '../resolvers/createModifyTempResolver';
+import { CreateTopicResolver } from '../resolvers/createTopicResolver';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
     children: [
       { path: '', component: AdminComponent, },
       { path: 'createModifyTemplate', component: CreateModifyTemplateComponent, resolve: { templates: CreateModifyTempResolver } },
-      { path: 'createTopic', component: CreateTopicComponent },
+      { path: 'createTopic', component: CreateTopicComponent , resolve: { templates: CreateTopicResolver } },
       { path: 'sendSurvey', component: SendSurveyComponent },
       { path: 'viewResults', component: ViewResultsComponent },
       { path: 'cohortAdmin', component: CohortAdminComponent }

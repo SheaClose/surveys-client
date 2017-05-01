@@ -1,3 +1,30 @@
-<p>
-  create-topic works!
-</p>
+<app-admin-header></app-admin-header>
+
+<div id="sendSurvey" class="surveyContainer">
+  <div class="container">
+    <p style="margin-bottom: 20px;">Create A New Topic</p>
+
+    <form (submit)="addTopic()">
+      <div class="input-row">
+        <div class="input-row">
+          <p>Name:</p>
+          <div class="input-field col s6">
+            <input [(ngModel)]="newTopic" name="name" type="text" id="topicName">
+          </div>
+        </div>
+      </div>
+      <section class="button-container">
+        <button class="dev-mountain-button" style="margin-bottom: 20px;" type="submit">Add</button>
+      </section>
+    </form>
+    <div>
+      <ul class="topics-container">
+        <ul *ngFor="let topic of topics; let i = index; trackBy: i;">
+          <li>
+            {{topic.name}}
+          </li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
