@@ -18,7 +18,6 @@ export class AdminHeaderComponent implements OnInit {
  ) { }
 
  adminLogout() {
-  console.log( 'anything?' );
   this.authService.logout()
    .subscribe( ( response ) => {
     if ( response === 200 ) {

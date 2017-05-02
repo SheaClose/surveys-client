@@ -1,3 +1,81 @@
-<p>
-  send-survey works!
-</p>
+<app-admin-header></app-admin-header>
+<div id="sendSurvey" class="surveyContainer">
+  <div class="container">
+    <p>Select Template:</p>
+    <div class="input-row">
+      <div class="input-field col s6">
+        <select id="choose_survey_template" [(ngModel)]="selectedTemplate" name="selectedTemplate" (change)="loadSelectedTemplate()">
+          <option value="" disabled selected>Select Template</option>
+          <option ngDefaultControl  *ngFor="let template of templates" [ngValue]="template">{{template.name}}</option>
+        </select>
+      </div>
+    </div>
+    <form (submit)="processForm()">
+      <div class="input-row">
+        <p>Survey Name:</p>
+        <div class="input-field col s6">
+          <input [(ngModel)]="survey.name" name="surveyName" type="text" id="surveyName" required>
+        </div>
+      </div>
+      <div class="input-row">
+        <p>Survey Description:</p>
+        <div class="input-field col s6">
+          <input [(ngModel)]="survey.description" name="surveyDescription" type="text" id="surveyDescription">
+        </div>
+      </div>
+      <p *ngIf="var_names.length">Variables:</p>
+      <div *ngFor="let var_name of var_names; let i = index; trackBy: i;" class="input-row">
+        <div class="input-field col s6">
+          <p class="variable_name">{{var_name}}:</p>
+          <input [(ngModel)]="var_values[i]" name="varValues[i]" type="text" id="var_value{{i}}" required>
+        </div>
+      </div>
+      <div class="input-row">
+        <p>Select Topic: </p>
+        <div class="input-field col s6">
+          <select id="choose_survey_topic" [(ngModel)]="survey.topic" name="surveyTopic">
+            <option value="" disabled selected>Select Topic</option>
+            <option *ngIf="topics.length === 0">Add new topic</option>
+            <option ngDefaultControl  *ngFor="let topic of topics" [ngValue]="topic">{{topic.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-row">
+        <p>Select From Active Cohorts:</p>
+        <div class="input-field col s6">
+          <select id="choose_survey_dropdown" [(ngModel)]="survey.cohortSentTo" name="cohortSentTo">
+            <option value="" disabled selected>Select Cohort</option>
+            <option value="-1">All</option>
+            <option ngDefaultControl  *ngFor="let cohort of cohorts" [ngValue]="cohort">{{cohort.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-row">
+        <p>Send to (cohort ID): {{survey.cohortSentTo.name}}</p>
+        <div class="input-field col s6">
+          <input [(ngModel)]="survey.cohortSentTo.dmCohortId" name="dmCohortId" type="number" id="cohort_sentTo" required>
+        </div>
+      </div>
+      <div class="input-row">
+        <span>
+          <input type="checkbox" id="test6" checked="checked" [(ngModel)]="survey.repeatable" name="repeatable"/>
+          <label for="test6">Repeatable</label>
+        </span>
+        <span style="margin-left:60px;">
+          <input type="checkbox" id="test7" checked="checked" [(ngModel)]="survey.optional" name="optional"/>
+          <label for="test7">Optional</label>
+        </span>
+      </div>
+      <div class="input-row">
+      </div>
+      <section class="button-container">
+        <button class="dev-mountain-button" type="button" (click)="previewSurvey()">Preview</button>
+        <button class="dev-mountain-button" type="submit">Send</button>
+      </section>
+      <br>
+      <app-preview-survey [surveyName]="prevSurvey.name" [surveyDescription]="prevSurvey.description" [surveyTopic]="prevSurvey.topic.name" [surveyQuestions]="prevSurvey.questions" *ngIf="previewSelected">
+      </app-preview-survey>
+      <p class="error_msg" *ngIf="errorMsg">{{errorMsg}}</p>
+    </form>
+  </div>
+</div>
