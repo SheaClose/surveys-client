@@ -1,0 +1,15 @@
+.preview_survey h4, #viewSurveyResults h4 {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  color: #00358b;
+}
+
+#survey_questions p {
+  font-family: Helvetica;
+  font-size: 1.2em;
+  color: black;
+}
+
+#survey_questions .bold {
+  font-weight: bold;
+}

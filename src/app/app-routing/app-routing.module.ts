@@ -17,6 +17,7 @@ import { StudentResolver } from '../resolvers/studentResolver';
 import { AdminResolver } from '../resolvers/adminResolver';
 import { CreateModifyTempResolver } from '../resolvers/createModifyTempResolver';
 import { CreateTopicResolver } from '../resolvers/createTopicResolver';
+import { SendSurveyResolver } from '../resolvers/sendSurveyResolver';
 
 const routes: Routes = [
   {
@@ -37,7 +38,10 @@ const routes: Routes = [
       { path: '', component: AdminComponent, },
       { path: 'createModifyTemplate', component: CreateModifyTemplateComponent, resolve: { templates: CreateModifyTempResolver } },
       { path: 'createTopic', component: CreateTopicComponent , resolve: { templates: CreateTopicResolver } },
-      { path: 'sendSurvey', component: SendSurveyComponent },
+      { path: 'sendSurvey', component: SendSurveyComponent, resolve: {
+        topics: SendSurveyResolver,
+        templates: CreateModifyTempResolver
+      } },
       { path: 'viewResults', component: ViewResultsComponent },
       { path: 'cohortAdmin', component: CohortAdminComponent }
     ]

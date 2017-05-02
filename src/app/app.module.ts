@@ -19,6 +19,7 @@ import { StudentResolver } from './resolvers/studentResolver';
 import { AdminResolver } from './resolvers/adminResolver';
 import { CreateModifyTempResolver } from './resolvers/createModifyTempResolver';
 import { CreateTopicResolver } from './resolvers/createTopicResolver';
+import { SendSurveyResolver } from './resolvers/sendSurveyResolver';
 
 import { AuthService } from './auth-service.service';
 import { TemplateSurveyService } from './admin/templateSurveyService';
@@ -33,6 +34,7 @@ import { ViewResultsComponent } from './admin/view-results/view-results.componen
 import { CohortAdminComponent } from './admin/cohort-admin/cohort-admin.component';
 import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 import { QuestionCrudComponent } from './admin/create-modify-template/question-crud/question-crud.component';
+import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/preview-survey.component';
 
 
 
@@ -52,7 +54,8 @@ import { QuestionCrudComponent } from './admin/create-modify-template/question-c
     ViewResultsComponent,
     CohortAdminComponent,
     AdminHeaderComponent,
-    QuestionCrudComponent
+    QuestionCrudComponent,
+    PreviewSurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { QuestionCrudComponent } from './admin/create-modify-template/question-c
     , AdminResolver
     , CreateModifyTempResolver
     , CreateTopicResolver
+    , SendSurveyResolver
     , AuthService
     , TemplateSurveyService
   ]

@@ -1,0 +1,14 @@
+<div class="preview_survey">
+  <h4>Survey Name: {{surveyName}}</h4>
+  <h4>Survey Description: {{surveyDescription}}</h4>
+  <h4>Survey Topic: {{surveyTopic}}</h4>
+  <br>
+  <div id="survey_questions" *ngFor="let question of surveyQuestions">
+    <h4>Question Text: {{question.questionText}}</h4>
+    <p>Question Type: {{question.type}}</p>
+    <p>Question Required? {{question.required}}</p>
+    <p *ngIf="question.type==='numeric'">Question Low Value: {{question.lowValue}}</p>
+    <p *ngIf="question.type==='numeric'">Question High Value: {{question.highValue}}</p>
+    <br>
+  </div>
+</div>

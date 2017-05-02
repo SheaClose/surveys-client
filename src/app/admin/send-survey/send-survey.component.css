@@ -1,0 +1,72 @@
+select {
+  display: block;
+}
+
+/*.container {
+  text-align: center;
+}*/
+
+#sendSurvey .container .row {
+  margin-bottom: 50px;
+}
+
+#sendSurvey .button {
+  font-family: Arial;
+  font-size: 1.2em;
+  background: #444;
+  color: white;
+  width: 180px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.delete_icon:hover {
+  cursor: pointer;
+}
+
+#sendSurvey .variable_name {
+  color: green;
+}
+
+#sendSurvey div>option {
+  display: none;
+}
+
+#sendSurvey p {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: #00358b;
+}
+
+#sendSurvey p.error_msg {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input-row {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-field {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-container {
+  margin-top: 25px;
+}
+
+.button-container .dev-mountain-button {
+  border: none;
+  font-family: 'Lato', sans-serif;
+  width: 180px;
+  height: 30px;
+  background: #2AABE2;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
