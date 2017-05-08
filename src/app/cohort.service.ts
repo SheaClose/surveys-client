@@ -20,7 +20,6 @@ export class CohortService {
     return this.http
       .get(this.apiBaseUrl + '/api/admin/cohorts')
       .map( response => {
-        console.log(response);
         this.cohorts = response;
         return response.json();
       })

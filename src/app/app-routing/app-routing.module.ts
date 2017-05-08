@@ -12,12 +12,14 @@ import { CreateTopicComponent } from '../admin/create-topic/create-topic.compone
 import { SendSurveyComponent } from '../admin/send-survey/send-survey.component';
 import { ViewResultsComponent } from '../admin/view-results/view-results.component';
 import { CohortAdminComponent } from '../admin/cohort-admin/cohort-admin.component';
+import { NoRoleComponent } from '../student/no-role/no-role.component';
 
 import { StudentResolver } from '../resolvers/studentResolver';
 import { AdminResolver } from '../resolvers/adminResolver';
 import { CreateModifyTempResolver } from '../resolvers/createModifyTempResolver';
 import { CreateTopicResolver } from '../resolvers/createTopicResolver';
 import { SendSurveyResolver } from '../resolvers/sendSurveyResolver';
+import { ViewResultsResolver } from '../resolvers/viewResultsResolver';
 
 const routes: Routes = [
   {
@@ -42,9 +44,13 @@ const routes: Routes = [
         topics: SendSurveyResolver,
         templates: CreateModifyTempResolver
       } },
-      { path: 'viewResults', component: ViewResultsComponent },
+      { path: 'viewResults', component: ViewResultsComponent, resolve: {
+        surveys: ViewResultsResolver
+      } },
       { path: 'cohortAdmin', component: CohortAdminComponent }
     ]
+  }, {
+    path: 'norole', component: NoRoleComponent
   }, {
     path: '**', redirectTo: '/landing', pathMatch: 'full'
   }

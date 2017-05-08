@@ -54,33 +54,51 @@ export class TemplateSurveyService {
       .catch(this.errorHandler);
   }
   writeNewSurvey(data) {
-    return this.http.post(this.apiBaseUrl + '/api/admin/surveys/', data);
+    return this.http.post(this.apiBaseUrl + '/api/admin/surveys/', data)
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
   getAllSurveyNamesAndDates() {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/names_dates');
+    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/names_dates')
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
   getSurvey(id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/' + id);
+    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/' + id)
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
 
   getTopic(topic_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/topics?_id=' + topic_id);
+    return this.http.get(this.apiBaseUrl + '/api/admin/topics?_id=' + topic_id)
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
 
   getSurveyUsersSentTo(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/sent_to/' + survey_id);
+    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/sent_to/' + survey_id)
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
 
   getSurveyUsersUntaken(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/untaken/' + survey_id);
+    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/untaken/' + survey_id)
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
 
   getSurveyResults(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/results/' + survey_id);
+    return this.http
+      .get(this.apiBaseUrl + '/api/admin/results/' + survey_id)
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
 
   checkForAdminAuth(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/current_user');
+    return this.http
+    .get(this.apiBaseUrl + '/api/admin/current_user')
+    .map(res => res.json())
+    .catch(this.errorHandler);
   };
   // Non-CRUD
 

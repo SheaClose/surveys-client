@@ -1,0 +1,41 @@
+h4 {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  color: #00358b;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.user_report_grid {
+  width: 700px;
+  height: 700px;
+  margin: auto;
+}
+
+.q_a_grid {
+  width: 800px;
+  height: 500px;
+}
+
+.grid_header {
+  color: #fff;
+  background-color: #000;
+}
+
+.ui-grid-footer-info {
+  font-weight: bold;
+}
+
+.input-row {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-field {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
