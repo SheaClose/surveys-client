@@ -6,6 +6,7 @@ import { MaterializeModule } from 'ng2-materialize';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ import { ViewResultsResolver } from './resolvers/viewResultsResolver';
 
 import { AuthService } from './auth-service.service';
 import { TemplateSurveyService } from './admin/templateSurveyService';
-
+import { CohortService } from './admin/cohort.service';
 import { NumericQuestionComponent } from './student/numeric-question/numeric-question.component';
 import { BooleanQuestionComponent } from './student/boolean-question/boolean-question.component';
 import { TextQuestionComponent } from './student/text-question/text-question.component';
@@ -64,6 +65,7 @@ import { NoRoleComponent } from './student/no-role/no-role.component';
   ],
   imports: [
     BrowserModule,
+    Ng2OrderModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
@@ -80,6 +82,7 @@ import { NoRoleComponent } from './student/no-role/no-role.component';
     , ViewResultsResolver
     , AuthService
     , TemplateSurveyService
+    , CohortService
   ]
   , bootstrap: [AppComponent]
 })

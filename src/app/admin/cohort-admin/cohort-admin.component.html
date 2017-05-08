@@ -1,3 +1,37 @@
-<p>
-  cohort-admin works!
-</p>
+<section class="admin-main-container">
+  <app-admin-header></app-admin-header>
+  Cohort Managment
+
+  <button (click)="check()">Check DevMountain for updates</button>
+  <div class="row" *ngFor="let cohort of cohorts | orderBy: 'dmCohortId' : true" style="border-bottom:1px solid black;">
+    <div class="col s12">
+      <span style="float:left;padding-left:40px;">
+        DevMtn Cohrt Id {{cohort.dmCohortId}}
+      </span>
+
+      <span class="small-btn" style="float:right;margin-right:40px;" [ngClass]="{active:cohort.active,inactive:!cohort.active}" (click)="cohort.active = !cohort.active;edit=true">
+        <span *ngIf="cohort.active">Active</span>
+      <span *ngIf="!cohort.active">Inactive</span>
+      </span>
+      <span class="small-btn" style="float:right;margin-right:40px;" (click)="updateCohort(cohort);edit=false" [ngClass]="{nowidth:!edit}">
+        Save
+      </span>
+    </div>
+    <div class="col m6 s12">
+      <input class="col s4" [(ngModel)]="cohort.name" (change)="edit = true">
+      <select style="display:inline-block;" class="col s4" (change)="edit = true" [(ngModel)]="cohort.location.city">
+      <option *ngFor="let location of locations"> {{ location }} </option>
+      </select>
+      <input class="col s4" [(ngModel)]="cohort.slack_channel" (change)="edit = true" placeholder="Slack Channel">
+    </div>
+    <div class="col m6 s12">
+      <select style="display:inline-block;" class="col s6" (change)="edit = true" [(ngModel)]="cohort.type">
+        <option *ngFor="let type of types">{{ type }}</option>
+      </select>
+      <select style="display:inline-block;" class="col s6" (change)="edit = true" [(ngModel)]="cohort.subject">
+        <option value="" *ngFor="let subject of subjects"> {{ subject }} </option>
+      </select>
+    </div>
+    <hr />
+  </div>
+</section>
