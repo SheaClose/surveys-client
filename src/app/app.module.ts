@@ -6,6 +6,7 @@ import { MaterializeModule } from 'ng2-materialize';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 import { AppComponent } from './app.component';
@@ -20,10 +21,11 @@ import { AdminResolver } from './resolvers/adminResolver';
 import { CreateModifyTempResolver } from './resolvers/createModifyTempResolver';
 import { CreateTopicResolver } from './resolvers/createTopicResolver';
 import { SendSurveyResolver } from './resolvers/sendSurveyResolver';
+import { ViewResultsResolver } from './resolvers/viewResultsResolver';
 
 import { AuthService } from './auth-service.service';
 import { TemplateSurveyService } from './admin/templateSurveyService';
-
+import { CohortService } from './admin/cohort.service';
 import { NumericQuestionComponent } from './student/numeric-question/numeric-question.component';
 import { BooleanQuestionComponent } from './student/boolean-question/boolean-question.component';
 import { TextQuestionComponent } from './student/text-question/text-question.component';
@@ -35,6 +37,10 @@ import { CohortAdminComponent } from './admin/cohort-admin/cohort-admin.componen
 import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 import { QuestionCrudComponent } from './admin/create-modify-template/question-crud/question-crud.component';
 import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/preview-survey.component';
+import { FilterPipe } from './admin/view-results/filter.pipe';
+import { NoRoleComponent } from './student/no-role/no-role.component';
+import { ViewBadgeRequestsComponent } from './admin/view-badge-requests/view-badge-requests.component';
+import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analytics.component';
 
 
 
@@ -55,10 +61,15 @@ import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/previ
     CohortAdminComponent,
     AdminHeaderComponent,
     QuestionCrudComponent,
-    PreviewSurveyComponent
+    PreviewSurveyComponent,
+    FilterPipe,
+    NoRoleComponent,
+    ViewBadgeRequestsComponent,
+    CohortAnalyticsComponent
   ],
   imports: [
     BrowserModule,
+    Ng2OrderModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
@@ -72,8 +83,10 @@ import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/previ
     , CreateModifyTempResolver
     , CreateTopicResolver
     , SendSurveyResolver
+    , ViewResultsResolver
     , AuthService
     , TemplateSurveyService
+    , CohortService
   ]
   , bootstrap: [AppComponent]
 })

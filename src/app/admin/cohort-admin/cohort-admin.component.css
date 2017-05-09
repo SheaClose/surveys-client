@@ -1,0 +1,22 @@
+.admin-main-container {
+  text-align: center;
+}
+
+.small-btn {
+  background-color: #1DBDFF;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 15px;
+  transition-duration: 0.5s;
+  overflow: hidden;
+  max-width: 10vw;
+  box-sizing: border-box;
+}
+
+.btn.waves-effect.waves-light.grey {
+  font-size: .85rem;
+  padding: 2px 10px;
+  border-radius: 7.5px;
+}
