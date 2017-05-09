@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+hr {
+  margin-top: 10px;
+  border-bottom: 1px solid black;
+}
+
+button {
+  margin-top: 10px;
+}
+
 #viewSurveyResults h4 {
   font-family: Helvetica, sans-serif;
   font-size: 1.5em;
@@ -33,7 +42,7 @@
 }
 
 .button-container {
-  margin: 25px;
+  margin-bottom: 25px;
 }
 
 .dev-mountain-button {
