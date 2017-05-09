@@ -39,6 +39,8 @@ import { QuestionCrudComponent } from './admin/create-modify-template/question-c
 import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/preview-survey.component';
 import { FilterPipe } from './admin/view-results/filter.pipe';
 import { NoRoleComponent } from './student/no-role/no-role.component';
+import { ViewBadgeRequestsComponent } from './admin/view-badge-requests/view-badge-requests.component';
+import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analytics.component';
 
 
 
@@ -61,7 +63,9 @@ import { NoRoleComponent } from './student/no-role/no-role.component';
     QuestionCrudComponent,
     PreviewSurveyComponent,
     FilterPipe,
-    NoRoleComponent
+    NoRoleComponent,
+    ViewBadgeRequestsComponent,
+    CohortAnalyticsComponent
   ],
   imports: [
     BrowserModule,

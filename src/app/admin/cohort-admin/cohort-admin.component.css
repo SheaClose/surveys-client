@@ -14,3 +14,9 @@
   max-width: 10vw;
   box-sizing: border-box;
 }
+
+.btn.waves-effect.waves-light.grey {
+  font-size: .85rem;
+  padding: 2px 10px;
+  border-radius: 7.5px;
+}

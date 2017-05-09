@@ -2,7 +2,7 @@
   <app-admin-header></app-admin-header>
   Cohort Managment
 
-  <button (click)="check()">Check DevMountain for updates</button>
+  <button class="btn waves-effect waves-light grey" type="submit" [ngClass]="{disabled: disabled}" name="action" (click)="check(); disabled = true;">Check DevMountain for updates</button>
   <div class="row" *ngFor="let cohort of cohorts | orderBy: 'dmCohortId' : true" style="border-bottom:1px solid black;">
     <div class="col s12">
       <span style="float:left;padding-left:40px;">

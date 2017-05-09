@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+
+<div id="viewSurveyResults" class="surveyContainer">
+  <div class="container" style="text-align:left;">
+    <div class="button-container" (click)="toggleOld()">
+      <span class="dev-mountain-button" *ngIf="seeOld">Hide Old</span>
+      <span class="dev-mountain-button" *ngIf="!seeOld">See Old</span>
+    </div>
+    <div *ngFor="let badge of filteredBadges">
+      <div class="row">
+        <div *ngIf="badge.archived">
+          Badge Awarded
+        </div>
+        <b>Name:</b> {{badge.answers[0].textAnswer}} {{badge.answers[1].textAnswer}} <b>Email:</b> {{badge.answers[2].textAnswer}}
+        <br>
+        <b>Personal: </b><a href="{{badge.answers[3].textAnswer}}" target ="_blank"> {{badge.answers[3].textAnswer}}</a>
+        <br>
+        <b>Group:</b> <a href="{{badge.answers[4].textAnswer}}" target ="_blank"> {{badge.answers[4].textAnswer}}</a>
+        <br>
+        <b>Portfolio:</b> <a href="{{badge.answers[5].textAnswer}}" target ="_blank"> {{badge.answers[5].textAnswer}}</a>
+        <br>
+        <button class="dev-mountain-button" (click)= "badge.editing = !badge.editing">Edit</button>
+        <button class="dev-mountain-button" *ngIf="!badge.finished" (click)="submitBadge(badge)">Submit Badge</button>
+        <div *ngIf="badge.editing">
+          Does not save to DB, but will edit for submit.
+          <input [(ngModel)]="badge.answers[0].textAnswer" name="textAnswer0">
+          <input [(ngModel)]="badge.answers[1].textAnswer" name="textAnswer1">
+          <input [(ngModel)]="badge.answers[2].textAnswer" name="textAnswer2">
+          <input [(ngModel)]="badge.answers[3].textAnswer" name="textAnswer3">
+          <input [(ngModel)]="badge.answers[4].textAnswer" name="textAnswer4">
+          <input [(ngModel)]="badge.answers[5].textAnswer" name="textAnswer5">
+        </div>
+        <hr>
+      </div>
+
+    </div>
+  </div>
+</div>

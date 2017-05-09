@@ -10,10 +10,11 @@ import { TakesurveyComponent } from '../student/takesurvey/takesurvey.component'
 import { CreateModifyTemplateComponent } from '../admin/create-modify-template/create-modify-template.component';
 import { CreateTopicComponent } from '../admin/create-topic/create-topic.component';
 import { SendSurveyComponent } from '../admin/send-survey/send-survey.component';
+import { ViewBadgeRequestsComponent } from '../admin/view-badge-requests/view-badge-requests.component';
 import { ViewResultsComponent } from '../admin/view-results/view-results.component';
 import { CohortAdminComponent } from '../admin/cohort-admin/cohort-admin.component';
 import { NoRoleComponent } from '../student/no-role/no-role.component';
-
+import { CohortAnalyticsComponent } from '../admin/cohort-analytics/cohort-analytics.component';
 import { StudentResolver } from '../resolvers/studentResolver';
 import { AdminResolver } from '../resolvers/adminResolver';
 import { CreateModifyTempResolver } from '../resolvers/createModifyTempResolver';
@@ -51,6 +52,10 @@ const routes: Routes = [
     ]
   }, {
     path: 'norole', component: NoRoleComponent
+  }, {
+    path: 'view_badge_requests', component: ViewBadgeRequestsComponent
+  }, {
+    path: 'cohortAnalytics', component: CohortAnalyticsComponent
   }, {
     path: '**', redirectTo: '/landing', pathMatch: 'full'
   }
