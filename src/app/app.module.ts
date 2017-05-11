@@ -42,6 +42,7 @@ import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/previ
 import { NoRoleComponent } from './student/no-role/no-role.component';
 import { ViewBadgeRequestsComponent } from './admin/view-badge-requests/view-badge-requests.component';
 import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analytics.component';
+import { TableauInterfaceComponent } from './admin/cohort-analytics/tableau-interface/tableau-interface.component';
 
 
 
@@ -65,7 +66,8 @@ import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analyt
     PreviewSurveyComponent,
     NoRoleComponent,
     ViewBadgeRequestsComponent,
-    CohortAnalyticsComponent
+    CohortAnalyticsComponent,
+    TableauInterfaceComponent
   ],
   imports: [
     Ng2FilterPipeModule,

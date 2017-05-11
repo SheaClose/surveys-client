@@ -1,0 +1,30 @@
+.analytics-wrapper caption {
+  background-color: black;
+  color: white;
+  padding: 3px;
+  text-transform: uppercase;
+}
+
+.analytics-wrapper tr.table-title {
+  width: 100%;
+}
+
+.analytics-wrapper table {
+  margin-bottom: 20px;
+  table-layout: fixed;
+}
+
+.analytics-wrapper table, .analytics-wrapper td, .analytics-wrapper th {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.analytics-wrapper .tableau-button {
+  width: 200px;
+  padding: 20px 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+}

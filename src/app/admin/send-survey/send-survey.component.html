@@ -2,9 +2,9 @@
 <div id="sendSurvey" class="surveyContainer">
   <div class="container">
     <p>Select Template:</p>
-    <div class="input-row">
+    <div id="choose_survey_template" class="input-row">
       <div class="input-field col s6">
-        <select id="choose_survey_template" [(ngModel)]="selectedTemplate" name="selectedTemplate" (change)="loadSelectedTemplate()">
+        <select [(ngModel)]="selectedTemplate" name="selectedTemplate" (change)="loadSelectedTemplate()">
           <option value="" disabled selected>Select Template</option>
           <option ngDefaultControl  *ngFor="let template of templates" [ngValue]="template">{{template.name}}</option>
         </select>

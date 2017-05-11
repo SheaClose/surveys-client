@@ -12,6 +12,7 @@ export class CohortAdminComponent implements OnInit {
   subjects: string[] = ['webdev', 'ui/ux', 'ios'];
   cohorts: any[];
   edit = false;
+  disabled;
 
   constructor(
     private cohortService: CohortService
@@ -21,7 +22,7 @@ export class CohortAdminComponent implements OnInit {
     this.cohortService
       .getCohorts()
       .subscribe((response) => {
-        this.cohorts = response;
+        this.cohorts = response.map(c => Object.assign(c, {edit: false}));
       });
   }
 

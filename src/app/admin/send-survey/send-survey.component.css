@@ -46,18 +46,32 @@ select {
 
 .input-row {
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
-
+.container p{
+  display: flex;
+  justify-content: center;
+}
 .input-field {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-
+form div {
+  margin: 0 auto;
+}
+#choose_survey_template {
+  margin: 0 auto;
+}
 .button-container {
   margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.send_survey_form{
+  display: flex;
+  justify-content: center;
 }
 
 .button-container .dev-mountain-button {
