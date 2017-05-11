@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CohortService {
-  apiBaseUrl = 'http://localhost:3000';
+  // BASE_URL = 'https://surveys.devmountain.com/';
+  BASE_URL = 'http://localhost:3000';
   cohorts;
   constructor(
     private http: Http
@@ -18,7 +19,7 @@ export class CohortService {
 
   getCohorts() {
     return this.http
-      .get(this.apiBaseUrl + '/api/admin/cohorts')
+      .get(this.BASE_URL + '/api/admin/cohorts')
       .map( response => {
         this.cohorts = response;
         return response.json();
@@ -28,14 +29,14 @@ export class CohortService {
 
   updateCohort(cohort) {
     return this.http
-     .put( `${this.apiBaseUrl}/api/admin/cohorts/${cohort._id}`, cohort)
+     .put( `${this.BASE_URL}/api/admin/cohorts/${cohort._id}`, cohort)
      .map( res => res)
       .catch( this.errorHandler );
   }
 
   checkDevMountainCohorts() {
     return this.http
-    .get( this.apiBaseUrl + '/api/admin/checkDevMountainCohorts')
+    .get( this.BASE_URL + '/api/admin/checkDevMountainCohorts')
     .map(res => res)
     .catch( this.errorHandler );
   }

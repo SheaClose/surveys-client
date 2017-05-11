@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SurveyService {
+  // BASE_URL = 'https://surveys.devmountain.com';
   BASE_URL = 'http://localhost:3000';
   constructor(private http: Http) { }
 
