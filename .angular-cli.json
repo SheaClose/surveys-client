@@ -20,7 +20,10 @@
       "styles": [
       ],
       "scripts": ["../node_modules/jquery/dist/jquery.js",
-				"../node_modules/materialize-css/dist/js/materialize.js"],
+				"../node_modules/materialize-css/dist/js/materialize.js",
+        "../src/assets/tableau.js",
+        "../src/assets/tableauInit.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
