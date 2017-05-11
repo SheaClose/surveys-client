@@ -7,16 +7,16 @@
           {id: 'cohortName', alias: 'Cohort', dataType: tableau.dataTypeEnum.string},
           {id: 'format', alias: 'Format', dataType: tableau.dataTypeEnum.string},
           {id: 'unit', alias: 'Week', dataType: tableau.dataTypeEnum.int},
-          {id: 'OSAT', alias: 'Overall Satisfaction', aggType: tableau.aggTypeEnum.avg, dataType: tableau.dataTypeEnum.int},
-          {id: 'FSAT', alias: 'Instructor Satisfaction', aggType: tableau.aggTypeEnum.avg, dataType: tableau.dataTypeEnum.int},
-          {id: 'MSAT', alias: 'Mentor Satisfaction', aggType: tableau.aggTypeEnum.avg, dataType: tableau.dataTypeEnum.int},
-          {id: 'CSAT', alias: 'Curriculum Satisfaction', aggType: tableau.aggTypeEnum.avg, dataType: tableau.dataTypeEnum.int},
+          {id: 'OSAT', alias: 'Overall Satisfaction', dataType: tableau.dataTypeEnum.int},
+          {id: 'FSAT', alias: 'Instructor Satisfaction', dataType: tableau.dataTypeEnum.int},
+          {id: 'MSAT', alias: 'Mentor Satisfaction', dataType: tableau.dataTypeEnum.int},
+          {id: 'CSAT', alias: 'Curriculum Satisfaction', dataType: tableau.dataTypeEnum.int},
           {id: 'date', alias: 'Date', dataType: tableau.dataTypeEnum.string}
       ];
 
 
       var tableInfo = {
-          id : "devmt-stats",
+          id : "devmt_stats",
           alias : "Devmountain student satisfaction survey results",
           columns : cols
       };

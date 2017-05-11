@@ -22,7 +22,7 @@ export class CohortAdminComponent implements OnInit {
     this.cohortService
       .getCohorts()
       .subscribe((response) => {
-        this.cohorts = response.map(c => Object.assign(c, {edit: false}));
+        this.cohorts = response.map(c => Object.assign(c, { edit: false }));
       });
   }
 
