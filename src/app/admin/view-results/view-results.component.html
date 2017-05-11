@@ -1,78 +1,53 @@
 <app-admin-header></app-admin-header>
-
 <div id="viewSurveyResults" class="surveyContainer">
-
-  <div class="row" style="display: flex; flex-direction: column; text-align: center; min-height: 110px; margin-bottom: 0;">
-    <div class="row">
-      <div [ngClass]="{grey: filter.campus && (filter.campus === campus)}" (click)="filter.campus = filter.campus && (filter.campus === campus) ? null : campus; getSurveys();" class="waves-effect waves-light btn blue-grey" *ngFor="let campus of cohorts"
-        ng-repeat="(campus, cohorts) in filters.cohorts">
-        {{campus}}
+  <div *ngIf="!topic">
+    <div class="row" style="display: flex; flex-direction: column; text-align: center; min-height: 110px; margin-bottom: 0;">
+      <div class="row">
+        <div [ngClass]="{grey: filter.campus && (filter.campus === campus)}" (click)="filter.campus = filter.campus && filter.campus === campus ? null : campus; getCohorts(campus)" class="waves-effect waves-light btn blue-grey" *ngFor="let campus of campuses">
+          {{campus}}
+        </div>
+      </div>
+      <div *ngIf="filter.campus" class="row" style="margin-bottom: 0;">
+        <div class="row" style="margin-bottom: 0;">
+          <div [ngClass]="{grey: filter.cohort && filter.cohort[cohort.dmCohortId]}" (click)="clickCohort(cohort.dmCohortId)" class="waves-effect waves-light btn blue-grey" *ngFor="let cohort of filter.cohorts">
+            {{cohort.name}}
+          </div>
+          <a *ngIf="!showInactive" href="javascript:void(0)" (click)="toggleInactive()">Show Inactive</a>
+          <a *ngIf="showInactive" href="javascript:void(0)" (click)="toggleInactive()">Hide Inactive</a>
+        </div>
       </div>
     </div>
-<!--
-
-    <div ng-show="filter.campus" class="row" style="margin-bottom: 0;">
-      <div class="row" style="margin-bottom: 0;">
-        <div ng-class="{grey: filter.cohort && filter.cohort[cohort.dmCohortId]}" ng-click="clickCohort(cohort.dmCohortId)" class="waves-effect waves-light btn blue-grey" ng-repeat="cohort in filters.cohorts[filter.campus] | filter: {active: true}">
-          {{cohort.name}}
-        </div>
-        <div ng-show="showInactive" ng-class="{grey: filter.cohort && filter.cohort[cohort.dmCohortId]}" ng-click="clickCohort(cohort.dmCohortId)" class="waves-effect waves-light btn blue-grey" ng-repeat="cohort in inactiveCohorts = (filters.cohorts[filter.campus] | filter: {active: false})">
-          {{cohort.name}}
-        </div>
-        <a ng-if="!showInactive && inactiveCohorts.length" href="javascript:void(0)" ng-click="toggleInactive()">Show Inactive</a>
-        <a ng-if="showInactive && inactiveCohorts.length" href="javascript:void(0)" ng-click="toggleInactive()">Hide Inactive</a>
+    <hr>
+    <div *ngIf="!filter.campus" class="row" style="display: flex; justify-content: center; align-items:center; margin-bottom: 0;">
+      <p>Select options above to see survey results.</p>
+    </div>
+    <div *ngIf="filter.campus" class="row" style="display: flex; align-items: center; flex-direction: column;">
+      <div class="row result-filter-container">
+        <input class="result-filter" type="text" [(ngModel)]="searchFilter.nameDate" placeholder="Search Surveys">
       </div>
+      <div class="row" *ngIf="!displaySurveys.length">
+        <p>No results were found with the options you selected</p>
+      </div>
+      <div class="row" *ngFor="let surv of displaySurveys | filterBy: searchFilter" >
+        <div class="waves-effect waves-light btn blue-grey" (click)="loadSelectedSurvey(surv)">{{surv.nameDate}}</div>
+      </div>
+    </div>
 
-      <div class="row">
-        <div ng-show="filter.campus" ng-click="filter = {}" class="waves-effect waves-light btn red">RESET</div> -->
-        <!--</div>-->
-      <!-- </div> -->
-
-    <!-- </div> -->
-    <!-- <hr>
-
-
-	<div ng-hide="filter.campus" class="row"
-	     style="display: flex; justify-content: center; align-items:center; margin-bottom: 0;">
-		<p>Select options above to see survey results.</p>
-	</div>
-
-
-	<div ng-show="filter.campus" class="row"
-	     style="display: flex; align-items: center; flex-direction: column;">
-
-		<div class="row result-filter-container">
-			<select class="result-filter" id="choose_survey" ng-options="topic._id as topic.name for topic in filters.topics"
-			        ng-model="filter.topic" ng-change="getSurveys()">
-				<option value="" selected>Filter by Topic</option>
-			</select>
-			<input class="result-filter" type="text" ng-model="searchFilter" placeholder="Search">
-		</div>
--->
-		<div class="row" *ngIf="displaySurveys.length">
-			<p>No results were found with the options you selected</p>
-		</div>
-
-		<div class="row" *ngFor="let surv of displaySurveys"ng-repeat="surv in displaySurveys | filter: {nameDate: searchFilter} | limitTo: 30">
-			<div class="waves-effect waves-light btn blue-grey" (click)="loadSelectedSurvey(surv)">{{surv.nameDate}}</div>
-		</div>
-
-
-    <!--<div class="results-overlay animate-fade-in" ng-show="survey" ng-click="survey = null" class="results-overlay"></div>--!>
-		<div class="results-modal animate-slide-down" ng-show="survey" class="row" ng-dblclick="survey=null">
-			<div class="close-button" ng-click="survey = null"><i class="material-icons">clear</i></div>
-			<h3>Survey Name: {{survey.name}}</h3>
-			<h3>Survey Description: {{survey.description}}</h3>
-			<h3>Survey Topic: {{topic[0].name}}</h3>
-			<br>
-			<h4>Questions and Answers</h4>
-			<div id="q_a"
-			     class="q_a_grid"
-			     ui-grid="q_a_options"
-			     ui-grid-resize-columns
-			     ui-grid-exporter>
-			</div>
-		</div>
-
-	</div>
-</div> -->
+  </div>
+  <div class="results-modal animate-slide-down row" *ngIf="topic">
+    <div class="" (click)="topic = null">
+      <i class="fa fa-times right white-text close-button" aria-hidden="true"></i>
+    </div>
+    <h3 class="results_h3">Survey Name: {{survey.name}}</h3>
+    <h3 class="results_h3">Survey Description: {{survey.description}}</h3>
+    <h3 class="results_h3">Survey Topic: {{topic.name}}</h3>
+    <h4>Questions and Answers</h4>
+    <div id="q_a_table">
+      <ag-grid-angular #agGrid style="width: 100%; height: 500px;" class="ag-fresh" [gridOptions]="gridOptions">
+      </ag-grid-angular>
+      <h3 class="results_h3">Total Items: {{resultsTotal}}</h3>
+      <div class="button-container"><button class="dev-mountain-button" type="button" (click)="gridOptions.api.exportDataAsCsv();" name="button">Export CSV</button></div>
+      <!-- NOTE: add averages and totals to this table -->
+    </div>
+  </div>
+</div>

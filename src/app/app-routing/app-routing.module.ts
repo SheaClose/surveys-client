@@ -48,7 +48,12 @@ const routes: Routes = [
       { path: 'viewResults', component: ViewResultsComponent, resolve: {
         surveys: ViewResultsResolver
       } },
-      { path: 'cohortAdmin', component: CohortAdminComponent }
+      { path: 'cohortAdmin', component: CohortAdminComponent },
+      {
+        path: 'view_badge_requests', component: ViewBadgeRequestsComponent
+      }, {
+        path: 'cohortAnalytics', component: CohortAnalyticsComponent
+      }
     ]
   }, {
     path: 'norole', component: NoRoleComponent
