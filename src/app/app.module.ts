@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import {AgGridModule} from 'ag-grid-angular/main';
 
 
 import { AppComponent } from './app.component';
@@ -68,6 +69,7 @@ import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analyt
     CohortAnalyticsComponent
   ],
   imports: [
+    AgGridModule.withComponents([ViewResultsComponent]),
     BrowserModule,
     Ng2OrderModule,
     FormsModule,

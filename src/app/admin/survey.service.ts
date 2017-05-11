@@ -34,9 +34,8 @@ export class SurveyService {
   }
 
   getSurveys(filter) {
-    const queryString = this.serialize(filter);
     return this.http
-      .get(this.BASE_URL + '/api/admin/surveys' + queryString)
+      .get(this.BASE_URL + '/api/admin/surveys' + filter)
       .map((response): any => {
         if (response.status === 200) {
           return response.json();

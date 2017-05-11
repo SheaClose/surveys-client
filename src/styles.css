@@ -1,25 +1,38 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: 'Lato', sans-serif;
-    vertical-align: baseline;
-    font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Lato', sans-serif;
+  vertical-align: baseline;
+  font-size: 100%;
 }
-[routerLink]{
-	z-index: 10;
-	cursor: pointer;
+
+[routerLink] {
+  z-index: 10;
+  cursor: pointer;
 }
-Footer{
-	font-size: 20px;
+
+Footer {
+  font-size: 20px;
   position: sticky;
   bottom: 0px;
   width: 100%;
   height: 40px;
-	padding: 0px;
-	background-color: #666;
-	padding-top: 7.5px;
+  padding: 0px;
+  background-color: #666;
+  padding-top: 7.5px;
 }
+
 Footer a {
   color: #007;
+}
+
+.ag-scrolls .ag-header-row {
+  white-space: normal;
+  color: white;
+  background-color: black;
+}
+
+.ag-fresh .ag-ltr .ag-cell-no-focus {
+  white-space: normal;
 }

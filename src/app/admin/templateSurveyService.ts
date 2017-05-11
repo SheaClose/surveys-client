@@ -55,36 +55,36 @@ export class TemplateSurveyService {
   }
   writeNewSurvey(data) {
     return this.http.post(this.apiBaseUrl + '/api/admin/surveys/', data)
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
   getAllSurveyNamesAndDates() {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/names_dates')
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
   getSurvey(id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/' + id)
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
 
   getTopic(topic_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/topics?_id=' + topic_id)
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
 
   getSurveyUsersSentTo(survey_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/sent_to/' + survey_id)
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
 
   getSurveyUsersUntaken(survey_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/untaken/' + survey_id)
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
 
   getSurveyResults(survey_id) {
@@ -96,9 +96,9 @@ export class TemplateSurveyService {
 
   checkForAdminAuth(survey_id) {
     return this.http
-    .get(this.apiBaseUrl + '/api/admin/current_user')
-    .map(res => res.json())
-    .catch(this.errorHandler);
+      .get(this.apiBaseUrl + '/api/admin/current_user')
+      .map(res => res.json())
+      .catch(this.errorHandler);
   };
   // Non-CRUD
 
@@ -158,115 +158,41 @@ export class TemplateSurveyService {
     return newSurvey;
   };
 
-  findWhoTookSurvey(users_requested, users_untaken) {
-    const userTookSurvey = [];
-    users_requested.forEach((user, index, array) => {
-      let tookSurvey = true;
-      users_untaken.forEach((us, ind, arr) => {
-        if (user._id === us._id) {
-          tookSurvey = false;
-        }
-      });
-      if (tookSurvey) {
-        userTookSurvey[index] = 'Yes';
-      } else {
-        userTookSurvey[index] = 'No';
-      }
-    });
-    return userTookSurvey;
-  };
-
-  loadUserReportData(usersRequested, usersUntaken) {
-    const newArray = [];
-    const tookSurvey = this.findWhoTookSurvey(usersRequested, usersUntaken);
-    for (let i = 0; i < usersRequested.length; i++) {
-      newArray.push({
-        'first_name': usersRequested[i].first_name,
-        'last_name': usersRequested[i].last_name,
-        'took_survey': tookSurvey[i]
-      });
-    }
-    return newArray;
-  };
-
-  getYesNoFooterCellTemplate() {
-    return '<div class="ui-grid-cell-contents" col-index="renderIndex"> <div> Yes: {{col.getAggregationValue()}}</div> </div>';
-  };
-
-  getNumericFooterCellTemplate() {
-    return `<div class="ui-grid-cell-contents"
-        col-index="renderIndex"> <div> {{col.getAggregationText()}}
-        {{col.getAggregationValue() | number:1 }}</div></div>`;
-  };
-
-  calculateYesCount(visRows, self) {
-    let yesCount = 0;
-    const column_id = self.name;
-    visRows.forEach((row, index, array) => {
-      if (row.entity[column_id] === 'Yes') {
-        yesCount++;
-      }
-    });
-    return yesCount;
-  };
-
-  loadQAColumns(survey, results) {
-    const newArray = [];
-    for (let i = 0; i < survey.questions.length; i++) {
-      const w = 250;
-      newArray.push({
-        field: 'column' + i,
-        displayName: survey.questions[i].questionText,
-        width: w,
-        headerTooltip: true,
-        enableHiding: false,
-        headerCellClass: 'grid_header'
-      });
-      switch (survey.questions[i].type) {
-        case 'numeric':
-          newArray[i].footerCellTemplate = this.getNumericFooterCellTemplate();
-          break;
-        case 'boolean':
-          newArray[i].footerCellTemplate = this.getYesNoFooterCellTemplate();
-          newArray[i].aggregationType = this.calculateYesCount;
-          break;
-        case 'text':
-          newArray[i].cellTooltip = true;
-          break;
-      }
-    }
-    return newArray;
-  };
-
   loadQAData(survey, results) {
-    const newArray = [];
+    const answers = [];
+    let tooltipField;
     for (let i = 0; i < results.length; i++) {
-      newArray[i] = {};
+      answers[i] = {};
       for (let j = 0; j < results[i].answers.length; j++) {
         const columnId = 'column' + j;
         switch (results[i].answers[j].type) {
           case 'numeric':
             if (results[i].answers[j].hasOwnProperty('numericAnswer')) {
-              newArray[i][columnId] = results[i].answers[j].numericAnswer;
+              answers[i][columnId] = results[i].answers[j].numericAnswer;
+            } else {
+              answers[i][columnId] = '';
             }
             break;
           case 'boolean':
             if (results[i].answers[j].hasOwnProperty('booleanAnswer')) {
               if (results[i].answers[j].booleanAnswer) {
-                newArray[i][columnId] = 'Yes';
+                answers[i][columnId] = 'Yes';
               } else {
-                newArray[i][columnId] = 'No';
+                answers[i][columnId] = 'No';
               }
             }
             break;
           case 'text':
             if (results[i].answers[j].hasOwnProperty('textAnswer')) {
-              newArray[i][columnId] = results[i].answers[j].textAnswer;
+              answers[i][columnId] = results[i].answers[j].textAnswer;
+              tooltipField = columnId;
+            } else {
+              answers[i][columnId] = '';
             }
             break;
         }
       }
     }
-    return newArray;
+    return { answers, tooltipField };
   };
 }
