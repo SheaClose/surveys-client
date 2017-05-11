@@ -14,7 +14,6 @@ export class TemplateSurveyService {
     console.log('error:', err.json());
     return err.json();
   }
-
   getTemplate(id) {
     return this.http
       .get(this.apiBaseUrl + '/api/admin/templates/' + id)
@@ -68,32 +67,27 @@ export class TemplateSurveyService {
       .map(res => res.json())
       .catch(this.errorHandler);
   };
-
   getTopic(topic_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/topics?_id=' + topic_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
-
   getSurveyUsersSentTo(survey_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/sent_to/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
-
   getSurveyUsersUntaken(survey_id) {
     return this.http.get(this.apiBaseUrl + '/api/admin/surveys/untaken/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
-
   getSurveyResults(survey_id) {
     return this.http
       .get(this.apiBaseUrl + '/api/admin/results/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
-
   checkForAdminAuth(survey_id) {
     return this.http
       .get(this.apiBaseUrl + '/api/admin/current_user')

@@ -10,6 +10,7 @@
 }
 
 .surveyHeader .nav-links {
+  z-index: 100;
   width: 65%;
   display: flex;
   justify-content: space-around;

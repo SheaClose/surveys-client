@@ -8,6 +8,7 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {AgGridModule} from 'ag-grid-angular/main';
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 
 import { AppComponent } from './app.component';
@@ -38,7 +39,6 @@ import { CohortAdminComponent } from './admin/cohort-admin/cohort-admin.componen
 import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
 import { QuestionCrudComponent } from './admin/create-modify-template/question-crud/question-crud.component';
 import { PreviewSurveyComponent } from './admin/send-survey/preview-survey/preview-survey.component';
-import { FilterPipe } from './admin/view-results/filter.pipe';
 import { NoRoleComponent } from './student/no-role/no-role.component';
 import { ViewBadgeRequestsComponent } from './admin/view-badge-requests/view-badge-requests.component';
 import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analytics.component';
@@ -63,12 +63,12 @@ import { CohortAnalyticsComponent } from './admin/cohort-analytics/cohort-analyt
     AdminHeaderComponent,
     QuestionCrudComponent,
     PreviewSurveyComponent,
-    FilterPipe,
     NoRoleComponent,
     ViewBadgeRequestsComponent,
     CohortAnalyticsComponent
   ],
   imports: [
+    Ng2FilterPipeModule,
     AgGridModule.withComponents([ViewResultsComponent]),
     BrowserModule,
     Ng2OrderModule,

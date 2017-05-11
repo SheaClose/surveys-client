@@ -23,13 +23,12 @@
     </div>
     <div *ngIf="filter.campus" class="row" style="display: flex; align-items: center; flex-direction: column;">
       <div class="row result-filter-container">
-        <!-- NOTE: Implement filter pipe based on this search. -->
-        <input class="result-filter" type="text" [(ngModel)]="searchFilter" placeholder="Search">
+        <input class="result-filter" type="text" [(ngModel)]="searchFilter.nameDate" placeholder="Search Surveys">
       </div>
       <div class="row" *ngIf="!displaySurveys.length">
         <p>No results were found with the options you selected</p>
       </div>
-      <div class="row" *ngFor="let surv of displaySurveys" ng-repeat="surv in displaySurveys | filter: {nameDate: searchFilter} | limitTo: 30">
+      <div class="row" *ngFor="let surv of displaySurveys | filterBy: searchFilter" >
         <div class="waves-effect waves-light btn blue-grey" (click)="loadSelectedSurvey(surv)">{{surv.nameDate}}</div>
       </div>
     </div>
@@ -43,9 +42,10 @@
     <h3 class="results_h3">Survey Description: {{survey.description}}</h3>
     <h3 class="results_h3">Survey Topic: {{topic.name}}</h3>
     <h4>Questions and Answers</h4>
-    <div>
+    <div id="q_a_table">
       <ag-grid-angular #agGrid style="width: 100%; height: 500px;" class="ag-fresh" [gridOptions]="gridOptions">
       </ag-grid-angular>
+      <h3 class="results_h3">Total Items: {{resultsTotal}}</h3>
       <div class="button-container"><button class="dev-mountain-button" type="button" (click)="gridOptions.api.exportDataAsCsv();" name="button">Export CSV</button></div>
       <!-- NOTE: add averages and totals to this table -->
     </div>

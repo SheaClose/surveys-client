@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SurveyService } from '../survey.service';
 import { TemplateSurveyService } from '../templateSurveyService';
 import { GridOptions } from 'ag-grid';
-// NOTE: implement filter pipe;
 @Component({
   selector: 'app-view-results',
   templateUrl: './view-results.component.html',
@@ -21,8 +20,9 @@ export class ViewResultsComponent implements OnInit {
   survey: any;
   topic: any;
   results: any[];
-  searchFilter: string;
+  searchFilter: any = { nameDate: '' };
   gridOptions: GridOptions;
+  resultsTotal: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -117,10 +117,31 @@ export class ViewResultsComponent implements OnInit {
       .subscribe((response) => {
         const results = response;
         const {answers, tooltipField} = this.templateSurveyService.loadQAData(this.survey, results);
+        this.resultsTotal = answers.length;
         const questions = this.survey.questions.map((c, i) => {
-          return { headerName: c.questionText, field: `column${i}`, width: 200, tooltipField: tooltipField ? tooltipField : null };
+          return {
+            headerName: c.questionText,
+            field: `column${i}`,
+            width: 200,
+            tooltipField: tooltipField ? tooltipField : null
+          };
         });
-        this.gridOptions.api.setFloatingBottomRowData([4]);
+        const averages = answers.reduce((accumulator, element) => {
+          for (const prop in element) {
+            if (!accumulator[prop]) {
+              if (typeof element[prop] === 'number') {
+                accumulator[prop] = element[prop];
+              }
+            } else if (accumulator[prop]) {
+              accumulator[prop] += element[prop];
+            }
+          }
+          return accumulator;
+        }, {});
+        for (const prop in averages) {
+          averages[prop] = `Average: ${(averages[prop] / answers.length).toFixed(1)}`;
+        }
+        answers.push(averages);
         this.gridOptions.api.setColumnDefs(questions);
         this.gridOptions.api.setRowData(answers);
         this.gridOptions.api.sizeColumnsToFit();

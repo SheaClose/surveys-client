@@ -59,7 +59,8 @@ hr {
   background-color: #000;
 }
 
-.ui-grid-footer-info {
+#q_a_table {
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
 }
 
