@@ -18,12 +18,6 @@ export class CreateTopicResolver implements Resolve<any> {
         console.error('err = ', err);
         if (err.status === 403) { //  if unauthorized
           this.router.navigate(['/admin']);
-        } else {
-          this.router.navigate(['/admin'], {
-            queryParams: {
-              successRedirect: 'createModifyTemplate'
-            }
-          });
         }
         return err;
       });

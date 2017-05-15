@@ -42,6 +42,12 @@ export class SendSurveyComponent implements OnInit {
       this.cohorts = [...res, { dmCohortId: -1, name: 'All 1 Week Limit', active: true }];
     });
   }
+  ngOnInit() {
+    const { value }: any = this.route.data;
+    this.topics = value.topics;
+    this.templates = value.templates.json();
+    console.log( value );
+  }
   loadSelectedTemplate() {
     this.templateSurveyService
       .getTemplate(this.selectedTemplate._id)
@@ -61,11 +67,6 @@ export class SendSurveyComponent implements OnInit {
       this.var_values
       );
     this.varsCompiled = true;
-  }
-  ngOnInit() {
-    const { value }: any = this.route.data;
-    this.topics = value.topics;
-    this.templates = value.templates.json();
   }
   writeSurvey() {
     this.templateSurveyService.writeNewSurvey({
