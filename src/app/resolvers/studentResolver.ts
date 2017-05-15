@@ -17,6 +17,7 @@ export class StudentResolver implements Resolve<any> {
     return this.authService
       .checkForAuth()
       .catch((res: any) => {
+        console.log( res );
         this.router.navigate(['/landing']);
         return res;
       });

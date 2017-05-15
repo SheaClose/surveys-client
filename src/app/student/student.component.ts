@@ -42,10 +42,9 @@ export class StudentComponent implements OnInit {
     const {student} = this.route.snapshot.data;
 
     submitted ? this.showToast() : null;
-
-    this.takeSurveyService.getUntaken(student._id).subscribe((surveyArray) => {
+    this.takeSurveyService.getUntaken(student.id).subscribe((surveyArray) => {
       surveyArray.forEach((e) => {
-        if (e.repeatable && e.usersTaken.indexOf(student._id) > -1) {
+        if (e.repeatable && e.usersTaken.indexOf(student.id) > -1) {
           this.repeatableSurveys.push(e);
         } else if (e.optional) {
           this.optionalSurveys.push(e);
@@ -54,8 +53,8 @@ export class StudentComponent implements OnInit {
         }
       });
     });
-    this.name = student.name.first + ' ' + student.name.last;
-
+    this.name = student.first_name + ' ' + student.last_name;
+  console.log( (_.findIndex(student.roles, (o) => o['role'] === 'mentor')) !== -1 );
     this.isMentor = (_.findIndex(student.roles, (o) => o['role'] === 'mentor')) !== -1;
   }
 
