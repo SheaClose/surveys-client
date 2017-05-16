@@ -40,7 +40,7 @@ export class TakesurveyComponent implements OnInit {
     this.student = student;
     this.route.params.subscribe(params => {
       this.takeSurveyService.getSurvey(params['studentId']).subscribe(res => {
-        this.params = res._id;
+        this.params = res.topic_id;
         this.survey = res;
         this.initializeResults();
         this.readTopic();
@@ -66,15 +66,15 @@ export class TakesurveyComponent implements OnInit {
   }
 
   readTopic() {
-    this.takeSurveyService.getTopic(this.survey.topic).subscribe(res => {
+    this.takeSurveyService.getTopic(this.survey.topic_id).subscribe(res => {
       this.topic = res.name;
-      this.topicId = res._id;
+      this.topicId = res.id;
     });
   }
 
   processForm() {
     if (this.checkForRequired()) {
-      this.results.user = this.student._id;
+      this.results.user = this.student.id;
       this.results.survey = this.params;
       this.results.topic = this.topicId;
       this.takeSurveyService
@@ -95,7 +95,6 @@ export class TakesurveyComponent implements OnInit {
         switch (this.results.answers[i].type) {
           case 'numeric':
             if (!this.results.answers[i].numericAnswer) {
-              console.log('numeric not answered');
               this.notAnswered[i] = true;
               allRequiredFieldsAnswered = false;
             } else {
@@ -104,7 +103,6 @@ export class TakesurveyComponent implements OnInit {
             break;
           case 'boolean':
             if (!this.results.answers[i].booleanAnswerCompleted) {
-              console.log('boolean not answered');
               this.notAnswered[i] = true;
               allRequiredFieldsAnswered = false;
             } else {
@@ -113,7 +111,6 @@ export class TakesurveyComponent implements OnInit {
             break;
           case 'text':
             if (!this.results.answers[i].textAnswer) {
-              console.log('text not answered');
               this.notAnswered[i] = true;
               allRequiredFieldsAnswered = false;
             } else {

@@ -24,21 +24,21 @@ export class TakeSurveyService {
   getSurvey(surveyId: string): Observable<any> {
     return this.http
       .get(this.apiBaseUrl + '/api/surveys/' + surveyId)
-      .map(survey => survey.json())
+      .map(survey => {
+        return survey.json();
+      })
       .catch(this.errorHandler);
   }
   getTopic(topicId) {
     return this.http
-      .get(this.apiBaseUrl + '/api/topics?_id=' + topicId)
+      .get(this.apiBaseUrl + '/api/topics?id=' + topicId)
       .map(topic => topic.json().pop())
       .catch(this.errorHandler);
   }
   writeSurveyResults(data) {
     return this.http
       .post(this.apiBaseUrl + '/api/surveys/results', data)
-      .map(topic => {
-        return topic.status;
-      })
+      .map(topic => topic.status )
       .catch(this.errorHandler);
   }
 }

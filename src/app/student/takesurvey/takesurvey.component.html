@@ -12,15 +12,15 @@
     <form (ngSubmit)="processForm()">
       <div class="survey-question" *ngFor="let question of survey.questions; let i = index; trackBy: i">
 
-        <app-numeric-question class="question-directive" [lowValue]="question.lowValue" [highValue]="question.highValue" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type"
+        <app-numeric-question class="question-directive" [lowValue]="question.low_value" [highValue]="question.high_value" [required]="question.required" [questionText]="question.question_text" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type"
           [notAnswered]="notAnswered" *ngIf="question.type === 'numeric'">
         </app-numeric-question>
 
-        <app-boolean-question class="question-directive" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" [borderOnYes]="borderOnYes"
+        <app-boolean-question class="question-directive" [required]="question.required" [questionText]="question.question_text" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" [borderOnYes]="borderOnYes"
           [borderOnNo]="borderOnNo" *ngIf="question.type === 'boolean'">
         </app-boolean-question>
 
-        <app-text-question class="question-directive" [required]="question.required" [questionText]="question.questionText" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" *ngIf="question.type === 'text'">
+        <app-text-question class="question-directive" [required]="question.required" [questionText]="question.question_text" [response]="results.answers[i]" [questionIndex]="i" [questionType]="question.type" [notAnswered]="notAnswered" *ngIf="question.type === 'text'">
         </app-text-question>
 
       </div>

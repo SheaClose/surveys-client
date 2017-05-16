@@ -54,7 +54,6 @@ export class StudentComponent implements OnInit {
       });
     });
     this.name = student.first_name + ' ' + student.last_name;
-  console.log( (_.findIndex(student.roles, (o) => o['role'] === 'mentor')) !== -1 );
     this.isMentor = (_.findIndex(student.roles, (o) => o['role'] === 'mentor')) !== -1;
   }
 

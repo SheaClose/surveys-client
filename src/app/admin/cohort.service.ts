@@ -29,7 +29,6 @@ export class CohortService {
     return this.http
       .put(this.BASE_URL + '/api/admin/cohorts/' + cohort._id, cohort)
       .map((response) => {
-        console.log(response.json());
         return response.json();
       })
       .catch(this.errorHandler);
@@ -39,7 +38,6 @@ export class CohortService {
     return this.http
       .get(this.BASE_URL + '/api/admin/checkDevMountainCohorts')
       .map((response) => {
-        console.log(response.json());
         this.cohorts = response.json();
         return response.json();
       })

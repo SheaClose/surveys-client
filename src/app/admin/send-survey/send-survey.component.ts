@@ -46,7 +46,6 @@ export class SendSurveyComponent implements OnInit {
     const { value }: any = this.route.data;
     this.topics = value.topics;
     this.templates = value.templates.json();
-    console.log( value );
   }
   loadSelectedTemplate() {
     this.templateSurveyService
