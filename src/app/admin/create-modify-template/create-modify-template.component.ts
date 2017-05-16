@@ -39,7 +39,7 @@ export class CreateModifyTemplateComponent implements OnInit {
 
   loadSelectedTemplate(templ) {
     this.templateSurveyService
-      .getTemplate(templ._id)
+      .getTemplate(templ.id)
       .subscribe(res => {
         this.template = res;
         this.selectedTemplateName = res.name;
@@ -48,7 +48,7 @@ export class CreateModifyTemplateComponent implements OnInit {
 
   updateExistingTemplate() {
     this.templateSurveyService
-      .updateTemplate(this.template._id, this.template)
+      .updateTemplate(this.template.id, this.template)
       .subscribe((res): void => {
         if (res.errors) {
           this.errorMsg = 'Error in Creating Template';
@@ -91,7 +91,7 @@ export class CreateModifyTemplateComponent implements OnInit {
         if (response.errors) {
           this.errorMsg = 'Error in Creating Template';
         }
-        if (response._id) {
+        if (response.id) {
           this.router.navigate(['/admin'], { queryParams: { toastMessage: 'Template Successfully Created' } });
         }
       });
@@ -106,8 +106,8 @@ export class CreateModifyTemplateComponent implements OnInit {
       if (this.selectedTemplateName === this.template.name) { // if haven't changed name
         return this.preSubmit();
       }
-      if (this.template._id) {
-        delete this.template._id;
+      if (this.template.id) {
+        delete this.template.id;
       }
       this.writeNewTemplate();
     } else {

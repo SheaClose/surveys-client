@@ -3,7 +3,7 @@
   <div class="input-row">
     <p class="bold_text">Question Text:</p>
     <div class="input-field col s6">
-      <input [(ngModel)]="question.questionText" type="text" id="questionText{{questionIndex}}" required>
+      <input [(ngModel)]="question.question_text" type="text" id="question_text{{questionIndex}}" required>
     </div>
   </div>
 
@@ -28,14 +28,14 @@
     <div class="input-row">
       <p>Low Value:</p>
       <div class="input-field col s6">
-        <input [(ngModel)]="question.lowValue" type="number" id="questionLowValue{{questionIndex}}">
+        <input [(ngModel)]="question.low_value" type="number" id="questionLowValue{{questionIndex}}">
       </div>
     </div>
 
     <div class="input-row">
       <p>High Value:</p>
       <div class="input-field col s6">
-        <input [(ngModel)]="question.highValue" type="number" id="questionHighValue{{questionIndex}}">
+        <input [(ngModel)]="question.high_value" type="number" id="questionHighValue{{questionIndex}}">
       </div>
     </div>
   </div>
