@@ -3,41 +3,44 @@
   "project": {
     "name": "surveys-client"
   },
-  "apps": [
-    {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-      ],
-      "scripts": ["../node_modules/jquery/dist/jquery.js",
-				"../node_modules/materialize-css/dist/js/materialize.js",
-        "../src/assets/tableau.js",
-        "../src/assets/tableauInit.js"
-      ],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+  "apps": [{
+    "root": "src",
+    "outDir": "dist",
+    "assets": [
+      "assets"
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "test": "test.ts",
+    "tsconfig": "tsconfig.app.json",
+    "testTsconfig": "tsconfig.spec.json",
+    "prefix": "app",
+    "styles": [
+      "../node_modules/font-awesome/css/font-awesome.min.css",
+      "./styles.css",
+      "../node_modules/mdi/css/materialdesignicons.css",
+      "../node_modules/ag-grid/dist/styles/ag-grid.css",
+      "../node_modules/ag-grid/dist/styles/theme-fresh.css",
+      "../node_modules/materialize-css/dist/css/materialize.css"
+    ],
+    "scripts": ["../node_modules/jquery/dist/jquery.js",
+      "../node_modules/materialize-css/dist/js/materialize.js",
+      "../src/assets/tableau.js",
+      "../src/assets/tableauInit.js"
+    ],
+    "environmentSource": "environments/environment.ts",
+    "environments": {
+      "dev": "environments/environment.ts",
+      "prod": "environments/environment.prod.ts"
     }
-  ],
+  }],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
-  "lint": [
-    {
+  "lint": [{
       "project": "src/tsconfig.app.json"
     },
     {

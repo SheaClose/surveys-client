@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class TemplateSurveyService {
 
-  apiBaseUrl = 'http://localhost:3000';
+  // BASE_URL = 'https://surveys.devmountain.com/';
+  BASE_URL = 'http://localhost:3000';
 
   constructor(private http: Http) { }
 
@@ -16,7 +17,7 @@ export class TemplateSurveyService {
   }
   getTemplate(id) {
     return this.http
-      .get(this.apiBaseUrl + '/api/admin/templates/' + id)
+      .get(this.BASE_URL + '/api/admin/templates/' + id)
       .map((res) => {
         return res.json();
       })
@@ -24,7 +25,7 @@ export class TemplateSurveyService {
   }
   updateTemplate(templateId, template) {
     return this.http
-      .put(this.apiBaseUrl + '/api/admin/templates/' + templateId, template)
+      .put(this.BASE_URL + '/api/admin/templates/' + templateId, template)
       .map((res) => {
         return res.json();
       })
@@ -32,7 +33,7 @@ export class TemplateSurveyService {
   }
   writeNewTemplate(template) {
     return this.http
-      .post(this.apiBaseUrl + '/api/admin/templates/', template)
+      .post(this.BASE_URL + '/api/admin/templates/', template)
       .map((res) => {
         return res.json();
       })
@@ -40,57 +41,57 @@ export class TemplateSurveyService {
   }
   getAllTopicNames() {
     return this.http
-      .get(this.apiBaseUrl + '/api/admin/topics/')
+      .get(this.BASE_URL + '/api/admin/topics/')
       .map(res => res.json())
       .catch(this.errorHandler);
   }
   addNewTopic(data) {
     return this.http
-      .post(this.apiBaseUrl + '/api/admin/topics/', data)
+      .post(this.BASE_URL + '/api/admin/topics/', data)
       .map(res => {
         return res.json();
       })
       .catch(this.errorHandler);
   }
   writeNewSurvey(data) {
-    return this.http.post(this.apiBaseUrl + '/api/admin/surveys/', data)
+    return this.http.post(this.BASE_URL + '/api/admin/surveys/', data)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getAllSurveyNamesAndDates() {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/names_dates')
+    return this.http.get(this.BASE_URL + '/api/admin/surveys/names_dates')
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getSurvey(id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/' + id)
+    return this.http.get(this.BASE_URL + '/api/admin/surveys/' + id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getTopic(topic_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/topics?_id=' + topic_id)
+    return this.http.get(this.BASE_URL + '/api/admin/topics?_id=' + topic_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getSurveyUsersSentTo(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/sent_to/' + survey_id)
+    return this.http.get(this.BASE_URL + '/api/admin/surveys/sent_to/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getSurveyUsersUntaken(survey_id) {
-    return this.http.get(this.apiBaseUrl + '/api/admin/surveys/untaken/' + survey_id)
+    return this.http.get(this.BASE_URL + '/api/admin/surveys/untaken/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   getSurveyResults(survey_id) {
     return this.http
-      .get(this.apiBaseUrl + '/api/admin/results/' + survey_id)
+      .get(this.BASE_URL + '/api/admin/results/' + survey_id)
       .map(res => res.json())
       .catch(this.errorHandler);
   };
   checkForAdminAuth(survey_id) {
     return this.http
-      .get(this.apiBaseUrl + '/api/admin/current_user')
+      .get(this.BASE_URL + '/api/admin/current_user')
       .map(res => res.json())
       .catch(this.errorHandler);
   };

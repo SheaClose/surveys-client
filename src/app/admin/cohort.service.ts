@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CohortService {
 
+  // BASE_URL = 'https://surveys.devmountain.com';
   BASE_URL = 'http://localhost:3000';
   cohorts;
 
